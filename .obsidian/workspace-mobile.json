@@ -1,0 +1,555 @@
+{
+  "main": {
+    "id": "19f1c179fff05b45",
+    "type": "split",
+    "children": [
+      {
+        "id": "c3bb84267d5ae814",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9d686cf3a0d96705",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          },
+          {
+            "id": "a459f3805b74d2f8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/SCSS.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SCSS"
+            }
+          },
+          {
+            "id": "b208acc26925982c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Синтаксис/Обзор.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Обзор"
+            }
+          },
+          {
+            "id": "fd7d0587e9a3d689",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Синтаксис/Разбор таблицы стилей.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Разбор таблицы стилей"
+            }
+          },
+          {
+            "id": "50bf558621feee91",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Синтаксис/Структура таблицы стилей.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Структура таблицы стилей"
+            }
+          },
+          {
+            "id": "aa9edfa0544ea728",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Синтаксис/Комментарии.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Комментарии"
+            }
+          },
+          {
+            "id": "ddb8012188f7ea15",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Синтаксис/Специальные функции.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Специальные функции"
+            }
+          },
+          {
+            "id": "2100cf1553441156",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Правила стиля/Обзор.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Обзор"
+            }
+          },
+          {
+            "id": "16891c7d684309e6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Правила стиля/Объявление свойств.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Объявление свойств"
+            }
+          },
+          {
+            "id": "9ef404404ad987b0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Правила стиля/Родительский селектор.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Родительский селектор"
+            }
+          },
+          {
+            "id": "9ed92ce176277080",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Правила стиля/Селекторы-заглушки.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Селекторы-заглушки"
+            }
+          },
+          {
+            "id": "3fcd62994d1b5a3c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Переменные.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Переменные"
+            }
+          },
+          {
+            "id": "7a6ed27181bffa0c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Интерполяция.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Интерполяция"
+            }
+          },
+          {
+            "id": "4ecffc52fbf0eb46",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Правила/Обзор.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Обзор"
+            }
+          },
+          {
+            "id": "bd11bec8f39dc890",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Правила/@use.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "@use"
+            }
+          },
+          {
+            "id": "453bfefac3e2dbd1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Правила/@forward.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "@forward"
+            }
+          },
+          {
+            "id": "15d2aac0a8f77533",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Правила/@import.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "@import"
+            }
+          },
+          {
+            "id": "c8e5b0b490edac03",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Правила/@mixin и @include.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "@mixin и @include"
+            }
+          },
+          {
+            "id": "71e3b9bb9e40bc30",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Правила/Управление потоком/Обзор.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Обзор"
+            }
+          },
+          {
+            "id": "e2fd90a51ec8055c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Правила/Управление потоком/@if и @else.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "@if и @else"
+            }
+          },
+          {
+            "id": "f06ff648fc0ba595",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Правила/Управление потоком/@each.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "@each"
+            }
+          },
+          {
+            "id": "67645820042d648d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Правила/Управление потоком/@for.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "@for"
+            }
+          },
+          {
+            "id": "ae88587ac6017e4b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Правила/Управление потоком/@while.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "@while"
+            }
+          },
+          {
+            "id": "b129de830ab234b0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Правила/Из CSS.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Из CSS"
+            }
+          },
+          {
+            "id": "91d841abcaf8b137",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Метаязыки/SCSS/Значения/Обзор.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Обзор"
+            }
+          }
+        ],
+        "currentTab": 24
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8095690fcf9ff6cf",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "e7138d69468ee3cf",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": false
+          },
+          "icon": "lucide-folder-closed",
+          "title": "Файловый менеджер"
+        }
+      },
+      {
+        "id": "e4ae56c5f1731707",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          },
+          "icon": "lucide-search",
+          "title": "Поиск"
+        }
+      },
+      {
+        "id": "a3fb91ff4a7bb289",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-tags",
+          "title": "Теги"
+        }
+      },
+      {
+        "id": "c3297c1055a75c41",
+        "type": "leaf",
+        "state": {
+          "type": "all-properties",
+          "state": {
+            "sortOrder": "frequency",
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-archive",
+          "title": "Все свойства"
+        }
+      },
+      {
+        "id": "86170ee7a4fe327f",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {},
+          "icon": "lucide-bookmark",
+          "title": "Закладки"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "d8208140aa5da3a7",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "20088b2348c2eca2",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "Метаязыки/SCSS/Правила/@mixin и @include.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-coming-in",
+          "title": "Обратные ссылки"
+        }
+      },
+      {
+        "id": "caa041c422a7d40d",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-going-out",
+          "title": "Исходящие ссылки"
+        }
+      },
+      {
+        "id": "00838634bcf76560",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-list",
+          "title": "Структура"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false,
+      "bases:Создать новую базу": false
+    }
+  },
+  "active": "e7138d69468ee3cf",
+  "lastOpenFiles": [
+    "Метаязыки/SCSS/Правила/Из CSS.md",
+    "Метаязыки/SCSS/Значения/Обзор.md",
+    "Метаязыки/SCSS/Значения",
+    "Метаязыки/SCSS/Правила/Управление потоком/@while.md",
+    "Метаязыки/SCSS/Правила/Управление потоком/@for.md",
+    "Метаязыки/SCSS/Правила/Управление потоком/@each.md",
+    "Метаязыки/SCSS/Правила/Управление потоком/@if и @else.md",
+    "Метаязыки/SCSS/Правила/Управление потоком/Обзор.md",
+    "Метаязыки/SCSS/Правила/@mixin и @include.md",
+    "Метаязыки/SCSS/Правила/Управление потоком",
+    "Метаязыки/SCSS/Правила/@import.md",
+    "Метаязыки/SCSS/Правила/@forward.md",
+    "Метаязыки/SCSS/Правила/@use.md",
+    "Метаязыки/SCSS/Правила/Обзор.md",
+    "Метаязыки/SCSS/Интерполяция.md",
+    "Метаязыки/SCSS/Правила",
+    "Метаязыки/SCSS/Переменные.md",
+    "Метаязыки/SCSS/Правила стиля/Селекторы-заглушки.md",
+    "Метаязыки/SCSS/Правила стиля/Родительский селектор.md",
+    "Метаязыки/SCSS/Правила стиля/Объявление свойств.md",
+    "Метаязыки/SCSS/Правила стиля/Обзор.md",
+    "Метаязыки/SCSS/Синтаксис/Специальные функции.md",
+    "Метаязыки/SCSS/Правила стиля",
+    "Метаязыки/SCSS/Синтаксис/Комментарии.md",
+    "Метаязыки/SCSS/Синтаксис/Структура таблицы стилей.md",
+    "Метаязыки/SCSS/Синтаксис/Разбор таблицы стилей.md",
+    "Метаязыки/SCSS/Синтаксис/Обзор.md",
+    "Метаязыки/SCSS/SCSS.md",
+    "Метаязыки/SCSS",
+    "Метаязыки/SCSS/Синтаксис",
+    "README.md",
+    "Метаязыки",
+    "Программы/Git.md",
+    "images/Tux.svg.png",
+    "images/Doxygen.png",
+    "images/Docker_Logo.png",
+    "images/AdGuard.svg.png",
+    "images/Git-logo.svg.png",
+    "images/UNIX_logo.svg.png",
+    "images/licensed-image.jpg",
+    "images/Gitea_Logo.svg.png",
+    "images/Ken_Thompson_02.jpg",
+    "images/Node.js_logo.svg.png",
+    "Операционные системы/Linux/Ubuntu Server",
+    "Программы/Git",
+    "Программы/GCC"
+  ]
+}
