@@ -75,7 +75,7 @@ https://sass-lang.com/documentation/modules/selector/
 
 ### selector.nest($selectors...)
 
-Имитирует стандартное вложение Sass (nesting), объединяя несколько селекторов в одну иерархическую цепочку.
+Имитирует стандартное вложение Sass, объединяя несколько селекторов в одну иерархическую цепочку.
 
 ```SCSS
 @debug selector.nest(".card", "&:hover", ".title"); 

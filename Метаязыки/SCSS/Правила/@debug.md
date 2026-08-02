@@ -21,7 +21,7 @@ https://sass-lang.com/documentation/at-rules/debug/
 ```scss
 $font-weights: ("regular": 400, "medium": 500, "bold": 700);
 
-@debug $font-weights; // Выведет всю карту (map) в консоль
+@debug $font-weights; // Выведет всю карту в консоль
 @debug map-get($font-weights, "medium"); // Выведет: 500
 ```
 

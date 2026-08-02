@@ -17,7 +17,7 @@ https://sass-lang.com/documentation/breaking-changes/color-functions/
 
 **Что изменилось:**
 
-- Все старые глобальные функции объявлены **устаревшими** (deprecated).
+- Все старые глобальные функции объявлены **устаревшими**.
     
 - Вместо них теперь используются три основных инструмента из модуля `sass:color`: `color.adjust()`, `color.scale()` и `color.mix()`.
 
