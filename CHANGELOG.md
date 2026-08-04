@@ -6,6 +6,10 @@
 
 ### Добавлено
 
+#### Глава 13. Взаимодействие с кодом Python
+
+- Урок 1 «Подключение Python» (встраиваемый интерпретатор Python, `Py_Initialize`/`Py_Finalize`/`PyRun_SimpleString`/`PyRun_SimpleFile`, компиляция на Windows и Linux, использование библиотек numpy и matplotlib) и индекс главы.
+
 #### Глава 12. Среды разработки для С
 
 - Урок 1 «Первая программа в Visual Studio» (установка Visual Studio Community, создание проекта по шаблону Empty Project, добавление файла `hello.c`, настройка компиляции как C через параметр Compile As, запуск через `Ctrl+F5`) и индекс главы.
