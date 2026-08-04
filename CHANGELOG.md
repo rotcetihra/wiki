@@ -13,6 +13,7 @@
 - Урок 3 «Ассемблерные вставки» (выражение `asm()`, синтаксис AT&T, выходные и входные параметры, дескрипторы регистров `"a"`/`"d"`/`"r"`/`"m"`, обновляемые параметры `"+"`, индексы `%N`, `asm volatile`).
 - Урок 4 «Измерение времени выполнения программы» (`time()` и `difftime()`, `clock()` и `CLOCKS_PER_SEC`, `gettimeofday()` из `sys/time.h`, `QueryPerformanceCounter`/`QueryPerformanceFrequency` в Windows, чтение TSC через `_rdtsc()`/`__rdtsc()` и `__rdtscp()`, сериализация конвейера инструкцией CPUID).
 - Урок 5 «Атрибуты и расширение __attribute__» (синтаксис атрибутов, `noreturn`, `deprecated`, `unused`, `packed` и выравнивание структур, `aligned`, `constructor`/`destructor`, переносимость кода).
+- Урок 6 «Преобразование строки в целое число» (`strtol`/`strtoll` с `endptr` и проверкой ошибок, `atol`/`atoll`, `atoi`, `sscanf`, ручное преобразование по таблице ASCII).
 
 #### Глава 13. Взаимодействие с кодом Python
 
