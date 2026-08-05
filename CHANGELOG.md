@@ -9,6 +9,7 @@
 #### Глава 9. Стандартная библиотека C
 
 - Урок 11 «<stdlib.h>» (функции преобразования строк в числа, `rand`/`srand`, завершение программы `exit`/`_Exit`/`abort`/`atexit`, `getenv`/`system`, `qsort`/`bsearch`, `abs`/`labs`/`llabs` и `div`/`ldiv`/`lldiv`, управление памятью, многобайтовые символы, константы и типы).
+- Урок 12 «<string.h>» (копирование `memcpy`/`memmove`/`strcpy`/`strncpy`/`strcat`/`strncat` и их ловушки, сравнение `memcmp`/`strcmp`/`strncmp`, сравнение по локали `strcoll`/`strxfrm`, поиск `strchr`/`strrchr`/`strstr`/`strpbrk`/`strspn`/`strcspn`/`memchr`, разбиение на токены `strtok`, длина `strlen`/`strnlen`, сообщения об ошибках `strerror`, безопасные версии `_s` из C11).
 
 ### Изменено
 
