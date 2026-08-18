@@ -12,18 +12,19 @@
 
 #### Глава 10. POSIX
 
-- Статья «2. <string.h>» (оглавление и описание библиотеки) и документация по POSIX/GNU-функциям `<string.h>` (27 файлов в `2. <string.h>/`): basename, explicit_bzero, memccpy, memfrob, memmem, mempcpy, memrchr, rawmemchr, stpcpy, stpncpy, strcasestr, strchrnul, strcoll_l, strerrordesc_np, strerror_l, strerror_r, strerror_s, strerrorname_np, strfry, strlcat, strlcpy, strsep, strsignal, strtok_r, strtok_s, strverscmp, strxfrm_l.
+- Статья «<string.h>» (оглавление и описание библиотеки) и документация по POSIX/GNU-функциям `<string.h>` (27 файлов в `<string.h>/`): basename, explicit_bzero, memccpy, memfrob, memmem, mempcpy, memrchr, rawmemchr, stpcpy, stpncpy, strcasestr, strchrnul, strcoll_l, strerrordesc_np, strerror_l, strerror_r, strerror_s, strerrorname_np, strfry, strlcat, strlcpy, strsep, strsignal, strtok_r, strtok_s, strverscmp, strxfrm_l.
 
 ### Изменено
 
 #### Глава 9. Стандартная библиотека C
 
 - Урок 12 «<string.h>»: статья переработана — вместо развёрнутых разделов теперь оглавление (два списка: ISO C и POSIX/расширения) и краткое описание библиотеки со сводными таблицами по категориям (копирование, сравнение, поиск, разбиение/длина, ошибки).
-- Урок 12 «<string.h>»: примечание о POSIX-функциях обновлено — вместо заготовки ссылка на новую статью «2. <string.h>» главы 10.
+- Урок 12 «<string.h>»: примечание о POSIX-функциях обновлено — вместо заготовки ссылка на новую статью «<string.h>» главы 10.
 
 #### Глава 10. POSIX
 
-- Обновлены навигация и индексы: статья «1. <strings.h>» (ссылка «Вперёд» → «2. <string.h>»), «Глава 10. POSIX.md», «C.md»; в «1. Создание потоков» (глава 11) ссылка «Назад» → «2. <string.h>».
+- Обновлены навигация и индексы: статья «<strings.h>» (ссылка «Вперёд» → «<string.h>»), «Глава 10. POSIX.md», «C.md»; в «1. Создание потоков» (глава 11) ссылка «Назад» → «<string.h>».
+- Статьи и папки главы переименованы — убрана нумерация: «1. <strings.h>.md» → «<strings.h>.md», «2. <string.h>.md» → «<string.h>.md», «2. <string.h>/» → «<string.h>/»; обновлены все ссылки (индексы, навигация, хлебные крошки, примечание в главе 9).
 
 ## 13.08.2026
 

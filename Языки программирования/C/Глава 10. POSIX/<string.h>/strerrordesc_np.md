@@ -1,8 +1,8 @@
 # strerrordesc_np
 
-[[Языки программирования/C/Глава 10. POSIX|Глава 10. POSIX]] / [[Языки программирования/C/Глава 10. POSIX/2. <string.h>|2. <string.h>]] / strerrordesc_np
+[[Языки программирования/C/Глава 10. POSIX|Глава 10. POSIX]] / [[Языки программирования/C/Глава 10. POSIX/<string.h>|<string.h>]] / strerrordesc_np
 
-[[Языки программирования/C/Глава 10. POSIX/2. <string.h>/strcoll_l|Назад]] | [[Языки программирования/C/Глава 10. POSIX/2. <string.h>|Содержание]] | [[Языки программирования/C/Глава 10. POSIX/2. <string.h>/strerror_l|Вперёд]]
+[[Языки программирования/C/Глава 10. POSIX/<string.h>/strcoll_l|Назад]] | [[Языки программирования/C/Глава 10. POSIX/<string.h>|Содержание]] | [[Языки программирования/C/Глава 10. POSIX/<string.h>/strerror_l|Вперёд]]
 
 **Дата написания:** 18.08.2026
 
@@ -80,14 +80,14 @@ int main(void)
 ## Альтернативы
 
 - **[[Языки программирования/C/Глава 9. Стандартная библиотека C/12. <string.h>/strerror|strerror()]]** — переведённое описание (зависит от локали)
-- **[[Языки программирования/C/Глава 10. POSIX/2. <string.h>/strerrorname_np|strerrorname_np()]]** — имя константы (`"ENOENT"`)
-- **[[Языки программирования/C/Глава 10. POSIX/2. <string.h>/strerror_r|strerror_r()]]** — потокобезопасное описание
+- **[[Языки программирования/C/Глава 10. POSIX/<string.h>/strerrorname_np|strerrorname_np()]]** — имя константы (`"ENOENT"`)
+- **[[Языки программирования/C/Глава 10. POSIX/<string.h>/strerror_r|strerror_r()]]** — потокобезопасное описание
 
 ## Похожие функции
 
 - [[Языки программирования/C/Глава 9. Стандартная библиотека C/12. <string.h>/strerror|strerror]] — описание с учётом локали
-- [[Языки программирования/C/Глава 10. POSIX/2. <string.h>/strerrorname_np|strerrorname_np]] — имя ошибки
-- [[Языки программирования/C/Глава 10. POSIX/2. <string.h>/strerror_r|strerror_r]] — потокобезопасный вариант
+- [[Языки программирования/C/Глава 10. POSIX/<string.h>/strerrorname_np|strerrorname_np]] — имя ошибки
+- [[Языки программирования/C/Глава 10. POSIX/<string.h>/strerror_r|strerror_r]] — потокобезопасный вариант
 
 ## Источники
 
