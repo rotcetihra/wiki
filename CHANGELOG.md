@@ -10,11 +10,20 @@
 
 - Документация по функциям `<string.h>` (25 файлов в `12. <string.h>/`): memchr, memcmp, memcpy, memmove, memset, strcat, strchr, strcmp, strcoll, strcpy, strcspn, strdup, strerror, strlen, strncat, strncmp, strncpy, strndup, strnlen, strpbrk, strrchr, strspn, strstr, strtok, strxfrm.
 
+#### Глава 10. POSIX
+
+- Статья «2. <string.h>» (оглавление и описание библиотеки) и документация по POSIX/GNU-функциям `<string.h>` (27 файлов в `2. <string.h>/`): basename, explicit_bzero, memccpy, memfrob, memmem, mempcpy, memrchr, rawmemchr, stpcpy, stpncpy, strcasestr, strchrnul, strcoll_l, strerrordesc_np, strerror_l, strerror_r, strerror_s, strerrorname_np, strfry, strlcat, strlcpy, strsep, strsignal, strtok_r, strtok_s, strverscmp, strxfrm_l.
+
 ### Изменено
 
 #### Глава 9. Стандартная библиотека C
 
 - Урок 12 «<string.h>»: статья переработана — вместо развёрнутых разделов теперь оглавление (два списка: ISO C и POSIX/расширения) и краткое описание библиотеки со сводными таблицами по категориям (копирование, сравнение, поиск, разбиение/длина, ошибки).
+- Урок 12 «<string.h>»: примечание о POSIX-функциях обновлено — вместо заготовки ссылка на новую статью «2. <string.h>» главы 10.
+
+#### Глава 10. POSIX
+
+- Обновлены навигация и индексы: статья «1. <strings.h>» (ссылка «Вперёд» → «2. <string.h>»), «Глава 10. POSIX.md», «C.md»; в «1. Создание потоков» (глава 11) ссылка «Назад» → «2. <string.h>».
 
 ## 13.08.2026
 
