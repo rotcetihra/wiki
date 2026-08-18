@@ -22,6 +22,7 @@
 #### Библиотеки
 
 - Статья «<ctype.h>» (оглавление по категориям и описание библиотеки) и документация по функциям и макросам `<ctype.h>` (32 файла в `<ctype.h>/`): _tolower, _toupper, isalnum, isalnum_l, isalpha, isalpha_l, isascii, isblank, isblank_l, iscntrl, iscntrl_l, isdigit, isdigit_l, isgraph, isgraph_l, islower, islower_l, isprint, isprint_l, ispunct, ispunct_l, isspace, isspace_l, isupper, isupper_l, isxdigit, isxdigit_l, toascii, tolower, tolower_l, toupper, toupper_l.
+  - Документация по новым заголовочным файлам стандартной библиотеки C: `<limits.h>`, `<float.h>`, `<assert.h>`, `<stdarg.h>`, `<stdbool.h>`, `<stdalign.h>`, `<iso646.h>`, `<stdckdint.h>` (всего 105 статей функций и макросов).
 
 ### Изменено
 
