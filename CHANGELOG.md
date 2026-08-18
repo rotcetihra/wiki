@@ -9,6 +9,7 @@
 #### Глава 9. Стандартная библиотека C
 
 - Документация по функциям `<string.h>` (25 файлов в `12. <string.h>/`): memchr, memcmp, memcpy, memmove, memset, strcat, strchr, strcmp, strcoll, strcpy, strcspn, strdup, strerror, strlen, strncat, strncmp, strncpy, strndup, strnlen, strpbrk, strrchr, strspn, strstr, strtok, strxfrm.
+- Документация по функциям `<stdlib.h>` (49 файлов в `11. <stdlib.h>/`): _Exit, EXIT_FAILURE, EXIT_SUCCESS, MB_CUR_MAX, RAND_MAX, abort, abs, aligned_alloc, at_quick_exit, atexit, atof, atoi, atol, atoll, bsearch, calloc, div, div_t, exit, free, getenv, labs, ldiv, ldiv_t, llabs, lldiv, lldiv_t, malloc, mblen, mbstowcs, mbtowc, quick_exit, qsort, rand, realloc, srand, strfromd, strfromf, strfroml, strtod, strtof, strtol, strtold, strtoll, strtoul, strtoull, system, wcstombs, wctomb.
 - Статья «14. <stddef.h>» (оглавление и описание библиотеки) и документация по определениям `<stddef.h>` (8 файлов в `14. <stddef.h>/`): NULL, max_align_t, nullptr_t, offsetof, ptrdiff_t, size_t, unreachable, wchar_t.
 
 #### Глава 10. POSIX
@@ -20,6 +21,8 @@
 
 #### Глава 9. Стандартная библиотека C
 
+- Урок 11 «<stdlib.h>»: статья переработана — вместо развёрнутых разделов теперь оглавление со ссылками на файлы функций и краткое описание библиотеки со сводными таблицами по категориям (преобразование строк в числа и обратно, управление памятью, сортировка и поиск, завершение программы, целочисленная математика, случайные числа, окружение, многобайтовые символы); дата обновления — 18.08.2026.
+- Статья «14. <stddef.h>»: удалён раздел «Исходный текст заголовочного файла».
 - Урок 12 «<string.h>»: статья переработана — вместо развёрнутых разделов теперь оглавление (два списка: ISO C и POSIX/расширения) и краткое описание библиотеки со сводными таблицами по категориям (копирование, сравнение, поиск, разбиение/длина, ошибки).
 - Урок 12 «<string.h>»: примечание о POSIX-функциях обновлено — вместо заготовки ссылка на новую статью «<string.h>» главы 10.
 - Обновлены навигация и индексы: в «13. <errno.h>» ссылка «Вперёд» → «14. <stddef.h>», в «<strings.h>» (глава 10) ссылка «Назад» → «14. <stddef.h>», статьи добавлены в оглавления «Глава 9. Стандартная библиотека C.md» и «C.md».
