@@ -13,6 +13,7 @@
 #### Глава 10. POSIX
 
 - Статья «<string.h>» (оглавление и описание библиотеки) и документация по POSIX/GNU-функциям `<string.h>` (27 файлов в `<string.h>/`): basename, explicit_bzero, memccpy, memfrob, memmem, mempcpy, memrchr, rawmemchr, stpcpy, stpncpy, strcasestr, strchrnul, strcoll_l, strerrordesc_np, strerror_l, strerror_r, strerror_s, strerrorname_np, strfry, strlcat, strlcpy, strsep, strsignal, strtok_r, strtok_s, strverscmp, strxfrm_l.
+- Документация по функциям `<strings.h>` (12 файлов в `<strings.h>/`): bcmp, bcopy, bzero, ffs, ffsl, ffsll, index, rindex, strcasecmp, strcasecmp_l, strncasecmp, strncasecmp_l.
 
 ### Изменено
 
@@ -25,6 +26,7 @@
 
 - Обновлены навигация и индексы: статья «<strings.h>» (ссылка «Вперёд» → «<string.h>»), «Глава 10. POSIX.md», «C.md»; в «1. Создание потоков» (глава 11) ссылка «Назад» → «<string.h>».
 - Статьи и папки главы переименованы — убрана нумерация: «1. <strings.h>.md» → «<strings.h>.md», «2. <string.h>.md» → «<string.h>.md», «2. <string.h>/» → «<string.h>/»; обновлены все ссылки (индексы, навигация, хлебные крошки, примечание в главе 9).
+- Статья «<strings.h>» переработана под структуру «<string.h>»: вместо развёрнутого урока оглавление со ссылками на файлы функций и краткое описание библиотеки со сводными таблицами (сравнение без учёта регистра, устаревшие функции BSD с заменами, битовые операции); добавлен полный исходный текст заголовочного файла glibc в разделе «Исходный текст заголовочного файла»; дата обновления — 18.08.2026.
 
 ## 13.08.2026
 

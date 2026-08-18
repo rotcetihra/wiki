@@ -5,118 +5,216 @@
 [[Языки программирования/C/Глава 9. Стандартная библиотека C/13. <errno.h>|Назад]] | [[Языки программирования/C/Глава 10. POSIX|Содержание]] | [[Языки программирования/C/Глава 10. POSIX/<string.h>|Вперёд]]
 
 **Дата написания:** 05.08.2026
+**Дата обновления:** 18.08.2026
 
-## Содержание
+## Оглавление
 
-- [[#1. Введение|1. Введение]]
-- [[#2. Регистронезависимое сравнение строк. strcasecmp и strncasecmp|2. Регистронезависимое сравнение строк. strcasecmp и strncasecmp]]
-- [[#3. Функции bcmp, bcopy и bzero|3. Функции bcmp, bcopy и bzero]]
-- [[#4. Функции index и rindex|4. Функции index и rindex]]
-- [[#5. Резюме|5. Резюме]]
+### BSD и расширения
 
-## 1. Введение
+- [[Языки программирования/C/Глава 10. POSIX/<strings.h>/bcmp|bcmp]] — сравнение N байт (устаревшая)
+- [[Языки программирования/C/Глава 10. POSIX/<strings.h>/bcopy|bcopy]] — копирование N байт (устаревшая)
+- [[Языки программирования/C/Глава 10. POSIX/<strings.h>/bzero|bzero]] — обнуление N байт (устаревшая)
+- [[Языки программирования/C/Глава 10. POSIX/<strings.h>/ffs|ffs]] — позиция первого установленного бита
+- [[Языки программирования/C/Глава 10. POSIX/<strings.h>/ffsl|ffsl]] — то же для `long`
+- [[Языки программирования/C/Глава 10. POSIX/<strings.h>/ffsll|ffsll]] — то же для `long long`
+- [[Языки программирования/C/Глава 10. POSIX/<strings.h>/index|index]] — первое вхождение символа (устаревшая)
+- [[Языки программирования/C/Глава 10. POSIX/<strings.h>/rindex|rindex]] — последнее вхождение символа (устаревшая)
+- [[Языки программирования/C/Глава 10. POSIX/<strings.h>/strcasecmp|strcasecmp]] — сравнение строк без учёта регистра
+- [[Языки программирования/C/Глава 10. POSIX/<strings.h>/strcasecmp_l|strcasecmp_l]] — то же с явной локалью
+- [[Языки программирования/C/Глава 10. POSIX/<strings.h>/strncasecmp|strncasecmp]] — сравнение не более N символов без учёта регистра
+- [[Языки программирования/C/Глава 10. POSIX/<strings.h>/strncasecmp_l|strncasecmp_l]] — то же с явной локалью
 
-Заголовочный файл `<strings.h>` — часть интерфейса POSIX, а не стандартной библиотеки C. Он определяет функции для работы со строками и блоками памяти, которых нет в стандартном `<string.h>`: регистронезависимое сравнение строк (`strcasecmp`/`strncasecmp`), а также устаревшие функции `bcmp`, `bcopy`, `bzero`, `index` и `rindex`.
+## Описание библиотеки
 
-Файл доступен на Unix-подобных системах (Linux, macOS, BSD); в Windows его нет — там аналогом `strcasecmp()` служит функция `_stricmp()` из `<string.h>`.
+Заголовочный файл `<strings.h>` — унаследованный интерфейс BSD, включённый в POSIX; в стандарт ISO C он не входит. Определяет функции, которых нет в стандартном `<string.h>`: регистронезависимое сравнение строк (`strcasecmp`, `strncasecmp` и их `_l`-варианты) и поиск первого установленного бита (`ffs`, `ffsl`, `ffsll`), а также устаревшие (LEGACY) функции `bcmp`, `bcopy`, `bzero`, `index`, `rindex`, заменяемые функциями `<string.h>`.
 
-## 2. Регистронезависимое сравнение строк. strcasecmp и strncasecmp
-
-Функции `strcasecmp()` и `strncasecmp()` — главное назначение заголовочного файла:
-
-```c
-int strcasecmp(const char *s1, const char *s2);
-int strncasecmp(const char *s1, const char *s2, size_t n);
-```
-
-Поведение:
-
-- работают как `strcmp()` и `strncmp()` из [[Языки программирования/C/Глава 9. Стандартная библиотека C/12. <string.h>|<string.h>]], но не учитывают регистр символов: `"HELLO"` и `"hello"` считаются равными;
-- возвращают отрицательное число, 0 или положительное число в зависимости от результата сравнения;
-- `strncasecmp()` сравнивает не более `n` символов;
-- в glibc сравнение выполняется в соответствии с текущей локалью (категория `LC_CTYPE`): результат зависит от установленной локали.
-
-Пример:
-
-```c
-#include <stdio.h>
-#include <strings.h>
-
-int main(void)
-{
-    printf("%d\n", strcasecmp("Hello", "hello"));  // 0 — равны
-    printf("%d\n", strcasecmp("abc", "ABD"));      // отрицательное (c < d)
-    printf("%d\n", strncasecmp("abcXYZ", "ABC", 3)); // 0: первые 3 символа равны
-
-    return 0;
-}
-```
+Файл доступен на Unix-подобных системах (Linux, macOS, BSD); в Windows его нет — аналогом `strcasecmp()` служит `_stricmp()` из `<string.h>`.
 
 >[!WARNING]
->`<strings.h>` — не стандарт C: код с `strcasecmp()` не скомпилируется на Windows (аналог `_stricmp()`, требуется `#include <string.h>`) и потребует переключения с `_stricmp()` обратно при переносе на Linux. Для переносимого кода обычно определяют собственную обёртку через `#ifdef _WIN32`.
+>Названия `strings.h` (POSIX) и `string.h` (стандарт C) легко перепутать — при подключении обратите внимание на букву «s».
 
->[!NOTE]
->Функции копирования, объединения и поиска строк остаются в стандартном `<string.h>`: `<strings.h>` лишь дополняет его. Названия `strings.h` (POSIX) и `string.h` (стандарт C) легко перепутать — при подключении обратите внимание на букву «s».
+### Сравнение без учёта регистра
 
-## 3. Функции bcmp, bcopy и bzero
+| Функция | Описание |
+|---|---|
+| `strcasecmp()` | Сравнение строк без учёта регистра в текущей локали |
+| `strncasecmp()` | Сравнение не более `n` символов без учёта регистра |
+| `strcasecmp_l()` | Сравнение без учёта регистра по правилам явной локали |
+| `strncasecmp_l()` | Сравнение не более `n` символов по правилам явной локали |
 
-Функции `bcmp()`, `bcopy()` и `bzero()` — устаревшие предшественники функций сравнения и копирования памяти:
+### Устаревшие функции BSD
 
-```c
-int bcmp(const void *s1, const void *s2, size_t n);
-void bcopy(const void *src, void *dest, size_t n);
-void bzero(void *s, size_t n);
-```
+| Функция | Описание | Замена |
+|---|---|---|
+| `bcmp()` | Сравнение `n` байт | `memcmp()` |
+| `bcopy()` | Копирование `n` байт (аргументы наоборот!) | `memmove()` / `memcpy()` |
+| `bzero()` | Обнуление `n` байт | `memset()` |
+| `index()` | Первое вхождение символа | `strchr()` |
+| `rindex()` | Последнее вхождение символа | `strrchr()` |
 
-Поведение:
+### Битовые операции
 
-- `bcmp()` сравнивает первые `n` байт двух блоков памяти, возвращает 0 при равенстве и ненулевое значение при различии (обратите внимание: соглашение противоположно `memcmp()`, который возвращает < 0, 0 или > 0);
-- `bcopy()` копирует `n` байт из `src` в `dest`. Важно: порядок аргументов обратный по сравнению с `memcpy()` — на первом месте источник, а не приёмник;
-- `bzero()` заполняет `n` байт блока нулями.
+| Функция | Описание |
+|---|---|
+| `ffs()` | Позиция первого установленного бита в `int` |
+| `ffsl()` | То же для `long` |
+| `ffsll()` | То же для `long long` |
 
-Все три функции объявлены устаревшими в POSIX (отмечены как obsolescent): их следует заменять на `memcmp()`, `memcpy()`/`memmove()` и `memset()`.
+## Исходный текст заголовочного файла
 
->[!WARNING]
->Из-за обратного порядка аргументов `bcopy()` легко ошибиться при переносе кода: `bcopy(src, dest, n)` эквивалентна `memmove(dest, src, n)`.
-
-## 4. Функции index и rindex
-
-Функции `index()` и `rindex()` — устаревшие предшественники `strchr()` и `strrchr()`:
-
-```c
-char *index(const char *s, int c);
-char *rindex(const char *s, int c);
-```
-
-Поведение:
-
-- `index()` возвращает указатель на первое вхождение символа `c` в строке `s` или `NULL`;
-- `rindex()` — указатель на последнее вхождение;
-- как и `strchr()`/`strrchr()`, находят и завершающий нуль (`index(s, '\0')` указывает на конец строки).
-
-Обе функции объявлены устаревшими в POSIX; вместо них используйте `strchr()` и `strrchr()` из стандартного `<string.h>`.
-
-Пример:
+Приведён полный текст заголовочного файла `<strings.h>` из glibc (версия 2.40, 2024 год) — комментарии в нём описывают назначение каждой функции и условия её объявления.
 
 ```c
-#include <stdio.h>
-#include <strings.h>
+/* Copyright (C) 1991-2024 Free Software Foundation, Inc.
+This file is part of the GNU C Library.
+The GNU C Library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+The GNU C Library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+Lesser General Public License for more details.
+You should have received a copy of the GNU Lesser General Public
+License along with the GNU C Library; if not, see
+<https://www.gnu.org/licenses/>. */
 
-int main(void)
+#ifndef _STRINGS_H
+#define _STRINGS_H 1
+#include <features.h>
+#define __need_size_t
+#include <stddef.h>
+/* Tell the caller that we provide correct C++ prototypes. */
+
+#if defined __cplusplus && __GNUC_PREREQ (4, 4)
+# define __CORRECT_ISO_CPP_STRINGS_H_PROTO
+#endif
+
+__BEGIN_DECLS
+#if defined __USE_MISC || !defined __USE_XOPEN2K8
+/* Compare N bytes of S1 and S2 (same as memcmp). */
+
+extern int bcmp (const void *__s1, const void *__s2, size_t __n)
+__THROW __attribute_pure__ __nonnull ((1, 2));
+/* Copy N bytes of SRC to DEST (like memmove, but args reversed). */
+
+extern void bcopy (const void *__src, void *__dest, size_t __n)
+__THROW __nonnull ((1, 2));
+/* Set N bytes of S to 0. */
+
+extern void bzero (void *__s, size_t __n) __THROW __nonnull ((1));
+/* Find the first occurrence of C in S (same as strchr). */
+
+# ifdef __CORRECT_ISO_CPP_STRINGS_H_PROTO
+extern "C++"
+
 {
-    const char* text = "Hello, world!";
-
-    printf("%s\n", index(text, 'o'));   // o, world!
-    printf("%s\n", rindex(text, 'o'));  // orld!
-
-    return 0;
+extern char *index (char *__s, int __c)
+__THROW __asm ("index") __attribute_pure__ __nonnull ((1));
+extern const char *index (const char *__s, int __c)
+__THROW __asm ("index") __attribute_pure__ __nonnull ((1));
+# if defined __OPTIMIZE__
+__extern_always_inline char *
+index (char *__s, int __c) __THROW
+{
+return __builtin_index (__s, __c);
 }
+
+__extern_always_inline const char *
+index (const char *__s, int __c) __THROW
+{
+return __builtin_index (__s, __c);
+}
+
+# endif
+}
+
+# else
+extern char *index (const char *__s, int __c)
+__THROW __attribute_pure__ __nonnull ((1));
+# endif
+/* Find the last occurrence of C in S (same as strrchr). */
+
+# ifdef __CORRECT_ISO_CPP_STRINGS_H_PROTO
+extern "C++"
+
+{
+extern char *rindex (char *__s, int __c)
+__THROW __asm ("rindex") __attribute_pure__ __nonnull ((1));
+extern const char *rindex (const char *__s, int __c)
+__THROW __asm ("rindex") __attribute_pure__ __nonnull ((1));
+# if defined __OPTIMIZE__
+__extern_always_inline char *
+rindex (char *__s, int __c) __THROW
+{
+return __builtin_rindex (__s, __c);
+}
+
+__extern_always_inline const char *
+rindex (const char *__s, int __c) __THROW
+{
+return __builtin_rindex (__s, __c);
+}
+
+# endif
+}
+
+# else
+extern char *rindex (const char *__s, int __c)
+__THROW __attribute_pure__ __nonnull ((1));
+# endif
+#endif
+
+#if defined __USE_MISC || !defined __USE_XOPEN2K8 || defined __USE_XOPEN2K8XSI
+/* Return the position of the first bit set in I, or 0 if none are set.
+The least-significant bit is position 1, the most-significant 32. */
+
+extern int ffs (int __i) __THROW __attribute_const__;
+#endif
+
+/* The following two functions are non-standard but necessary for non-32 bit
+platforms. */
+
+# ifdef __USE_MISC
+extern int ffsl (long int __l) __THROW __attribute_const__;
+__extension__ extern int ffsll (long long int __ll)
+__THROW __attribute_const__;
+# endif
+/* Compare S1 and S2, ignoring case. */
+
+extern int strcasecmp (const char *__s1, const char *__s2)
+__THROW __attribute_pure__ __nonnull ((1, 2));
+/* Compare no more than N chars of S1 and S2, ignoring case. */
+
+extern int strncasecmp (const char *__s1, const char *__s2, size_t __n)
+__THROW __attribute_pure__ __nonnull ((1, 2));
+#ifdef __USE_XOPEN2K8
+/* POSIX.1-2008 extended locale interface (see locale.h). */
+
+# include <bits/types/locale_t.h>
+/* Compare S1 and S2, ignoring case, using collation rules from LOC. */
+
+extern int strcasecmp_l (const char *__s1, const char *__s2, locale_t __loc)
+__THROW __attribute_pure__ __nonnull ((1, 2, 3));
+/* Compare no more than N chars of S1 and S2, ignoring case, using
+collation rules from LOC. */
+
+extern int strncasecmp_l (const char *__s1, const char *__s2,
+size_t __n, locale_t __loc)
+__THROW __attribute_pure__ __nonnull ((1, 2, 4));
+#endif
+
+__END_DECLS
+#if __GNUC_PREREQ (3,4) && __USE_FORTIFY_LEVEL > 0 \
+&& defined __fortify_function
+/* Functions with security checks. */
+
+# if defined __USE_MISC || !defined __USE_XOPEN2K8
+# include <bits/strings_fortified.h>
+# endif
+#endif
+
+#endif /* strings.h */
 ```
-
-## 5. Резюме
-
-1. `<strings.h>` — заголовочный файл POSIX, отсутствует в стандартной библиотеке C и на Windows.
-2. Главные функции: `strcasecmp()`/`strncasecmp()` — сравнение строк без учёта регистра (аналог в Windows — `_stricmp()`).
-3. `bcmp()`, `bcopy()`, `bzero()`, `index()`, `rindex()` — устаревшие, заменяются функциями `<string.h>`: `memcmp()`, `memcpy()`/`memmove()`, `memset()`, `strchr()`, `strrchr()`.
 
 [[Языки программирования/C/Глава 9. Стандартная библиотека C/13. <errno.h>|Назад]] | [[Языки программирования/C/Глава 10. POSIX|Содержание]] | [[Языки программирования/C/Глава 10. POSIX/<string.h>|Вперёд]]
