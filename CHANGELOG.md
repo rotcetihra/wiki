@@ -9,6 +9,7 @@
 #### Глава 9. Стандартная библиотека C
 
 - Документация по функциям `<string.h>` (25 файлов в `12. <string.h>/`): memchr, memcmp, memcpy, memmove, memset, strcat, strchr, strcmp, strcoll, strcpy, strcspn, strdup, strerror, strlen, strncat, strncmp, strncpy, strndup, strnlen, strpbrk, strrchr, strspn, strstr, strtok, strxfrm.
+- Статья «14. <stddef.h>» (оглавление и описание библиотеки) и документация по определениям `<stddef.h>` (8 файлов в `14. <stddef.h>/`): NULL, max_align_t, nullptr_t, offsetof, ptrdiff_t, size_t, unreachable, wchar_t.
 
 #### Глава 10. POSIX
 
@@ -21,6 +22,7 @@
 
 - Урок 12 «<string.h>»: статья переработана — вместо развёрнутых разделов теперь оглавление (два списка: ISO C и POSIX/расширения) и краткое описание библиотеки со сводными таблицами по категориям (копирование, сравнение, поиск, разбиение/длина, ошибки).
 - Урок 12 «<string.h>»: примечание о POSIX-функциях обновлено — вместо заготовки ссылка на новую статью «<string.h>» главы 10.
+- Обновлены навигация и индексы: в «13. <errno.h>» ссылка «Вперёд» → «14. <stddef.h>», в «<strings.h>» (глава 10) ссылка «Назад» → «14. <stddef.h>», статьи добавлены в оглавления «Глава 9. Стандартная библиотека C.md» и «C.md».
 
 #### Глава 10. POSIX
 
