@@ -19,6 +19,10 @@
 - Статья «<string.h>» (оглавление и описание библиотеки) и документация по POSIX/GNU-функциям `<string.h>` (27 файлов в `<string.h>/`): basename, explicit_bzero, memccpy, memfrob, memmem, mempcpy, memrchr, rawmemchr, stpcpy, stpncpy, strcasestr, strchrnul, strcoll_l, strerrordesc_np, strerror_l, strerror_r, strerror_s, strerrorname_np, strfry, strlcat, strlcpy, strsep, strsignal, strtok_r, strtok_s, strverscmp, strxfrm_l.
 - Документация по функциям `<strings.h>` (12 файлов в `<strings.h>/`): bcmp, bcopy, bzero, ffs, ffsl, ffsll, index, rindex, strcasecmp, strcasecmp_l, strncasecmp, strncasecmp_l.
 
+#### Библиотеки
+
+- Статья «<ctype.h>» (оглавление по категориям и описание библиотеки) и документация по функциям и макросам `<ctype.h>` (32 файла в `<ctype.h>/`): _tolower, _toupper, isalnum, isalnum_l, isalpha, isalpha_l, isascii, isblank, isblank_l, iscntrl, iscntrl_l, isdigit, isdigit_l, isgraph, isgraph_l, islower, islower_l, isprint, isprint_l, ispunct, ispunct_l, isspace, isspace_l, isupper, isupper_l, isxdigit, isxdigit_l, toascii, tolower, tolower_l, toupper, toupper_l.
+
 ### Изменено
 
 #### Глава 9. Стандартная библиотека C
@@ -41,8 +45,13 @@
 
 - Глава 10. POSIX заменена новой главой «Библиотеки»: в неё перенесены статьи о заголовочных файлах из главы 9 (11. `<stdlib.h>`, 12. `<string.h>`, 13. `<errno.h>`, 14. `<stddef.h>`) и главы 10 (`<stdlib.h>`, `<string.h>`, `<strings.h>`); глава 9 оставлена с уроками 1–10.
 - Статьи с одинаковыми именами объединены: «<stdlib.h>» (разделы «Стандарт C» и «Расширения POSIX и GNU»; 72 статьи функций в `<stdlib.h>/`) и «<string.h>» (те же разделы; 52 статьи функций в `<string.h>/`).
-- Убрана нумерация файлов, глава отсортирована по алфавиту: `<errno.h>`, `<stddef.h>`, `<stdlib.h>`, `<string.h>`, `<strings.h>`.
+- Убрана нумерация файлов, глава отсортирована по алфавиту: `<ctype.h>`, `<errno.h>`, `<stddef.h>`, `<stdlib.h>`, `<string.h>`, `<strings.h>`.
 - Обновлены навигация (главы 9 → Библиотеки → глава 11), хлебные крошки и вики-ссылки во всех статьях, индексы «Библиотеки.md», «Глава 9. Стандартная библиотека C.md», «C.md»; старые статьи-оглавления «11. <stdlib.h>» и «12. <string.h>» главы 9 удалены.
+- Обновлена навигация после добавления «<ctype.h>» первой статьёй главы: в «10. Проверка символов и ctype.h» ссылка «Вперёд» ведёт на «<ctype.h>», в «<errno.h>» «Назад» — на «<ctype.h>», в `E2BIG` «Назад» — на `toupper_l`; обновлён блок «Библиотеки» в «C.md» и описание главы в «Библиотеки.md».
+
+#### Глава 9. Стандартная библиотека C
+
+- Урок 10 «Проверка символов и ctype.h»: в конце добавлена ссылка на статью «<ctype.h>» главы «Библиотеки» (полный справочник по функциям, включая расширения POSIX и GNU); ссылка «Вперёд» теперь ведёт на «<ctype.h>» вместо «<errno.h>».
 
 ## 13.08.2026
 
