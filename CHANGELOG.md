@@ -12,6 +12,7 @@
 - Документация по функциям `<string.h>` (25 файлов в `12. <string.h>/`): memchr, memcmp, memcpy, memmove, memset, strcat, strchr, strcmp, strcoll, strcpy, strcspn, strdup, strerror, strlen, strncat, strncmp, strncpy, strndup, strnlen, strpbrk, strrchr, strspn, strstr, strtok, strxfrm.
 - Документация по функциям `<stdlib.h>` (49 файлов в `11. <stdlib.h>/`): _Exit, EXIT_FAILURE, EXIT_SUCCESS, MB_CUR_MAX, RAND_MAX, abort, abs, aligned_alloc, at_quick_exit, atexit, atof, atoi, atol, atoll, bsearch, calloc, div, div_t, exit, free, getenv, labs, ldiv, ldiv_t, llabs, lldiv, lldiv_t, malloc, mblen, mbstowcs, mbtowc, quick_exit, qsort, rand, realloc, srand, strfromd, strfromf, strfroml, strtod, strtof, strtol, strtold, strtoll, strtoul, strtoull, system, wcstombs, wctomb.
 - Статья «14. <stddef.h>» (оглавление и описание библиотеки) и документация по определениям `<stddef.h>` (8 файлов в `14. <stddef.h>/`): NULL, max_align_t, nullptr_t, offsetof, ptrdiff_t, size_t, unreachable, wchar_t.
+- Документация по функциям `<math.h>` (14 файлов в `<math.h>/`): cbrt, fabs, hypot, fmod, llround, llrint, lrint, lround, nearbyint, remainder, remquo, rint, round, trunc.
 
 #### Глава 10. POSIX
 
@@ -23,6 +24,7 @@
 
 - Статья «<ctype.h>» (оглавление по категориям и описание библиотеки) и документация по функциям и макросам `<ctype.h>` (32 файла в `<ctype.h>/`): _tolower, _toupper, isalnum, isalnum_l, isalpha, isalpha_l, isascii, isblank, isblank_l, iscntrl, iscntrl_l, isdigit, isdigit_l, isgraph, isgraph_l, islower, islower_l, isprint, isprint_l, ispunct, ispunct_l, isspace, isspace_l, isupper, isupper_l, isxdigit, isxdigit_l, toascii, tolower, tolower_l, toupper, toupper_l.
   - Документация по новым заголовочным файлам стандартной библиотеки C: `<limits.h>`, `<float.h>`, `<assert.h>`, `<stdarg.h>`, `<stdbool.h>`, `<stdalign.h>`, `<iso646.h>`, `<stdckdint.h>` (всего 105 статей функций и макросов).
+- Документация по функциям и макросам `<math.h>` (14 файлов в `<math.h>/`): fdim, fmax, fmin, fpclassify, isfinite, isinf, isnan, isnormal, isgreater, isgreaterequal, isless, islessequal, islessgreater, isunordered.
 
 ### Изменено
 
