@@ -8,8 +8,11 @@
 
 #### Библиотеки
 
+- Статья «<fenv.h>» (оглавление по категориям и описание библиотеки) и документация по типам, константам и функциям `<fenv.h>` (24 файла в `<fenv.h>/`): fenv_t, fexcept_t, FE_DIVBYZERO, FE_INEXACT, FE_INVALID, FE_OVERFLOW, FE_UNDERFLOW, FE_ALL_EXCEPT, FE_DOWNWARD, FE_TONEAREST, FE_TOWARDZERO, FE_UPWARD, FE_DFL_ENV, feclearexcept, fegetexceptflag, feraiseexcept, fesetexceptflag, fetestexcept, fegetround, fesetround, fegetenv, feholdexcept, fesetenv, feupdateenv.
 - Статья «<wchar.h>» (оглавление по категориям и описание библиотеки) и документация по типам, константам и функциям `<wchar.h>` (57 файлов в `<wchar.h>/`): wchar_t, wint_t, mbstate_t, WEOF, wcscat, wcschr, wcscmp, wcscoll, wcscpy, wcscspn, wcslen, wcsncat, wcsncmp, wcsncpy, wcspbrk, wcsrchr, wcsspn, wcsstr, wcswcs, wcsxfrm, wcstod, wcstof, wcstold, wcstol, wcstoll, wcstoul, wcstoull, btowc, wctob, mbsinit, mbrlen, mbrtowc, mbsrtowcs, wcrtomb, wcsrtombs, iswalnum, iswalpha, iswblank, iswcntrl, iswdigit, iswgraph, iswlower, iswprint, iswpunct, iswspace, iswupper, iswxdigit, towlower, towupper, towctrans, wctrans, wctype, wmemcpy, wmemmove, wmemset, wmemcmp, wmemchr.
 - Статья «<wctype.h>» (оглавление по категориям и описание библиотеки) и документация по типам, функциям классификации и преобразованиям `<wctype.h>` (19 файлов в `<wctype.h>/`): wctrans_t, wctype_t, iswalnum, iswalpha, iswblank, iswcntrl, iswdigit, iswgraph, iswlower, iswprint, iswpunct, iswspace, iswupper, iswxdigit, iswctype, wctype, towctrans, towlower, towupper.
+- Статья «<uchar.h>» (оглавление по категориям и описание библиотеки) и документация по типам и функциям преобразования `<uchar.h>` (6 файлов в `<uchar.h>/`): char16_t, char32_t, mbrtoc16, mbrtoc32, c16rtomb, c32rtomb.
+- Статья «<complex.h>» (оглавление по категориям и описание библиотеки) и документация по макросам и функциям `<complex.h>` (23 файла в `<complex.h>/`): Complex, _Complex_I, I, cabs, cacos, cacosh, carg, casin, casinh, catan, catanh, ccos, ccosh, cexp, cimag, clog, conj, cpow, cproj, creal, csin, csinh, csqrt, ctan, ctanh.
 
 ## 18.08.2026
 
