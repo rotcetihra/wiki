@@ -2,6 +2,15 @@
 
 Все важные изменения базы знаний фиксируются в этом файле. Записи группируются по датам (ДД.ММ.ГГГГ), новые — сверху. Изменения и добавления уроков внутри даты группируются по главам (заголовок `#### Глава N. ...`), при этом стандартные заголовки «Добавлено», «Изменено» и т. п. остаются на верхних уровнях (`###`). Подробное правило ведения — в разделе «Журнал изменений (CHANGELOG)» файла `AGENTS.md`.
 
+## 20.08.2026
+
+### Добавлено
+
+#### Библиотеки
+
+- Статья «<wchar.h>» (оглавление по категориям и описание библиотеки) и документация по типам, константам и функциям `<wchar.h>` (57 файлов в `<wchar.h>/`): wchar_t, wint_t, mbstate_t, WEOF, wcscat, wcschr, wcscmp, wcscoll, wcscpy, wcscspn, wcslen, wcsncat, wcsncmp, wcsncpy, wcspbrk, wcsrchr, wcsspn, wcsstr, wcswcs, wcsxfrm, wcstod, wcstof, wcstold, wcstol, wcstoll, wcstoul, wcstoull, btowc, wctob, mbsinit, mbrlen, mbrtowc, mbsrtowcs, wcrtomb, wcsrtombs, iswalnum, iswalpha, iswblank, iswcntrl, iswdigit, iswgraph, iswlower, iswprint, iswpunct, iswspace, iswupper, iswxdigit, towlower, towupper, towctrans, wctrans, wctype, wmemcpy, wmemmove, wmemset, wmemcmp, wmemchr.
+- Статья «<wctype.h>» (оглавление по категориям и описание библиотеки) и документация по типам, функциям классификации и преобразованиям `<wctype.h>` (19 файлов в `<wctype.h>/`): wctrans_t, wctype_t, iswalnum, iswalpha, iswblank, iswcntrl, iswdigit, iswgraph, iswlower, iswprint, iswpunct, iswspace, iswupper, iswxdigit, iswctype, wctype, towctrans, towlower, towupper.
+
 ## 18.08.2026
 
 ### Добавлено
