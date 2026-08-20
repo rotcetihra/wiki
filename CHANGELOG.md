@@ -2,6 +2,15 @@
 
 Все важные изменения базы знаний фиксируются в этом файле. Записи группируются по датам (ДД.ММ.ГГГГ), новые — сверху. Изменения и добавления уроков внутри даты группируются по главам (заголовок `#### Глава N. ...`), при этом стандартные заголовки «Добавлено», «Изменено» и т. п. остаются на верхних уровнях (`###`). Подробное правило ведения — в разделе «Журнал изменений (CHANGELOG)» файла `AGENTS.md`.
 
+### Добавлено
+
+#### Библиотеки
+
+- Статья «<setjmp.h>» (оглавление по категориям и описание библиотеки) и документация по типу и макросам `<setjmp.h>` (3 файла в `<setjmp.h>/`): jmp_buf, setjmp, longjmp.
+- Статья «<signal.h>» (оглавление по категориям и описание библиотеки) и документация по типу, константам и функциям `<signal.h>` (12 файлов в `<signal.h>/`): sig_atomic_t, SIG_DFL, SIG_ERR, SIG_IGN, SIGABRT, SIGFPE, SIGILL, SIGINT, SIGSEGV, SIGTERM, raise, signal.
+- Статья «<stdatomic.h>» (оглавление по категориям и описание библиотеки) и документация по типу, константам, функциям и барьерам памяти `<stdatomic.h>` (13 файлов в `<stdatomic.h>/`): atomic_flag, ATOMIC_FLAG_INIT, ATOMIC_VAR_INIT, atomic_init, atomic_store, atomic_load, atomic_exchange, atomic_compare_exchange, atomic_fetch_add, atomic_fetch_sub, atomic_thread_fence, atomic_signal_fence, kill_dependency.
+- Статья «<stdbit.h>» (оглавление по категориям и описание библиотеки, C23) и документация по функциям битовых операций `<stdbit.h>` (15 файлов в `<stdbit.h>/`): stdc_leading_zeros, stdc_leading_ones, stdc_trailing_zeros, stdc_trailing_ones, stdc_first_leading_zero, stdc_first_leading_one, stdc_first_trailing_zero, stdc_first_trailing_one, stdc_count_zeros, stdc_count_ones, stdc_has_single_bit, stdc_bit_ceil, stdc_bit_floor, stdc_bit_width, stdc_popcount.
+
 ## 20.08.2026
 
 ### Добавлено
