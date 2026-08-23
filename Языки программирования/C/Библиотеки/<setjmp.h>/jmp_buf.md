@@ -26,7 +26,9 @@ typedef /* unspecified */ jmp_buf;
 > [!WARNING]
 > После восстановления контекста через `longjmp` значения автоматических (локальных) переменных в функции, вызвавшей `setjmp`, становятся неопределёнными, если они не объявлены как `volatile` и не были изменены между `setjmp` и `longjmp`. Для сохранения значений используйте `volatile` переменные или глобальные/статические переменные.
 
-## Пример
+## Примеры
+
+### Базовое использование
 
 ```c
 #include <stdio.h>
@@ -48,6 +50,81 @@ int main(void)
     } else {
         printf("Возврат через longjmp\n");
     }
+    return 0;
+}
+```
+
+### Использование нескольких буферов для обработки разных ошибок
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <setjmp.h>
+
+jmp_buf error_buf[3];
+enum { ERR_MEMORY, ERR_FILE, ERR_NETWORK };
+
+void allocate_memory(void)
+{
+    void *p = malloc(1000000000000UL);
+    if (!p) longjmp(error_buf[ERR_MEMORY], 1);
+}
+
+void open_file(void)
+{
+    FILE *f = fopen("/nonexistent", "r");
+    if (!f) longjmp(error_buf[ERR_FILE], 2);
+}
+
+int main(void)
+{
+    for (int i = 0; i < 3; ++i) {
+        if (setjmp(error_buf[i]) == 0) {
+            switch (i) {
+                case ERR_MEMORY: allocate_memory(); break;
+                case ERR_FILE:   open_file(); break;
+                case ERR_NETWORK: printf("Сетевая ошибка\n"); longjmp(error_buf[ERR_NETWORK], 3);
+            }
+        } else {
+            printf("Обработана ошибка #%d\n", i);
+        }
+    }
+    return 0;
+}
+```
+
+### Паттерн повторной попытки (retry)
+
+```c
+#include <stdio.h>
+#include <setjmp.h>
+#include <unistd.h>
+
+jmp_buf retry_buf;
+volatile int attempt = 0;
+
+int unreliable_operation(void)
+{
+    /* Имитация нестабильной операции */
+    if (attempt++ < 2) return -1;
+    return 0;
+}
+
+int main(void)
+{
+    if (setjmp(retry_buf) == 0) {
+        if (unreliable_operation() != 0) {
+            printf("Попытка %d не удалась\n", attempt);
+            sleep(1);
+            longjmp(retry_buf, 1);
+        }
+    } else {
+        printf("Повторная попытка %d\n", attempt);
+        if (unreliable_operation() != 0) {
+            longjmp(retry_buf, 1);
+        }
+    }
+    printf("Операция успешна после %d попыток\n", attempt);
     return 0;
 }
 ```
