@@ -2,9 +2,17 @@
 
 Все важные изменения базы знаний фиксируются в этом файле. Записи группируются по датам (ДД.ММ.ГГГГ), новые — сверху. Изменения и добавления уроков внутри даты группируются по главам (заголовок `#### Глава N. ...`), при этом стандартные заголовки «Добавлено», «Изменено» и т. п. остаются на верхних уровнях (`###`). Подробное правило ведения — в разделе «Журнал изменений (CHANGELOG)» файла `AGENTS.md`.
 
+## 29.08.2026
+
+### Изменено
+
+#### Глава 10. Стандартная библиотека C
+
+- Переименовать раздел «Библиотеки» в «Глава 10. Стандартная библиотека C» для выравнивания нумерации глав (после Главы 9 идёт Глава 10).
+
 ### Добавлено
 
-#### Библиотеки
+#### Глава 10. Стандартная библиотека C
 
 - Статья «<setjmp.h>» (оглавление по категориям и описание библиотеки) и документация по типу и макросам `<setjmp.h>` (3 файла в `<setjmp.h>/`): jmp_buf, setjmp, longjmp.
 - Статья «<signal.h>» (оглавление по категориям и описание библиотеки) и документация по типу, константам и функциям `<signal.h>` (12 файлов в `<signal.h>/`): sig_atomic_t, SIG_DFL, SIG_ERR, SIG_IGN, SIGABRT, SIGFPE, SIGILL, SIGINT, SIGSEGV, SIGTERM, raise, signal.
@@ -15,7 +23,7 @@
 
 ### Добавлено
 
-#### Библиотеки
+#### Глава 10. Стандартная библиотека C
 
 - Статья «<fenv.h>» (оглавление по категориям и описание библиотеки) и документация по типам, константам и функциям `<fenv.h>` (24 файла в `<fenv.h>/`): fenv_t, fexcept_t, FE_DIVBYZERO, FE_INEXACT, FE_INVALID, FE_OVERFLOW, FE_UNDERFLOW, FE_ALL_EXCEPT, FE_DOWNWARD, FE_TONEAREST, FE_TOWARDZERO, FE_UPWARD, FE_DFL_ENV, feclearexcept, fegetexceptflag, feraiseexcept, fesetexceptflag, fetestexcept, fegetround, fesetround, fegetenv, feholdexcept, fesetenv, feupdateenv.
 - Статья «<wchar.h>» (оглавление по категориям и описание библиотеки) и документация по типам, константам и функциям `<wchar.h>` (57 файлов в `<wchar.h>/`): wchar_t, wint_t, mbstate_t, WEOF, wcscat, wcschr, wcscmp, wcscoll, wcscpy, wcscspn, wcslen, wcsncat, wcsncmp, wcsncpy, wcspbrk, wcsrchr, wcsspn, wcsstr, wcswcs, wcsxfrm, wcstod, wcstof, wcstold, wcstol, wcstoll, wcstoul, wcstoull, btowc, wctob, mbsinit, mbrlen, mbrtowc, mbsrtowcs, wcrtomb, wcsrtombs, iswalnum, iswalpha, iswblank, iswcntrl, iswdigit, iswgraph, iswlower, iswprint, iswpunct, iswspace, iswupper, iswxdigit, towlower, towupper, towctrans, wctrans, wctype, wmemcpy, wmemmove, wmemset, wmemcmp, wmemchr.
@@ -46,7 +54,7 @@
 - Статья «<string.h>» (оглавление и описание библиотеки) и документация по POSIX/GNU-функциям `<string.h>` (27 файлов в `<string.h>/`): basename, explicit_bzero, memccpy, memfrob, memmem, mempcpy, memrchr, rawmemchr, stpcpy, stpncpy, strcasestr, strchrnul, strcoll_l, strerrordesc_np, strerror_l, strerror_r, strerror_s, strerrorname_np, strfry, strlcat, strlcpy, strsep, strsignal, strtok_r, strtok_s, strverscmp, strxfrm_l.
 - Документация по функциям `<strings.h>` (12 файлов в `<strings.h>/`): bcmp, bcopy, bzero, ffs, ffsl, ffsll, index, rindex, strcasecmp, strcasecmp_l, strncasecmp, strncasecmp_l.
 
-#### Библиотеки
+#### Глава 10. Стандартная библиотека C
 
 - Статья «<ctype.h>» (оглавление по категориям и описание библиотеки) и документация по функциям и макросам `<ctype.h>` (32 файла в `<ctype.h>/`): _tolower, _toupper, isalnum, isalnum_l, isalpha, isalpha_l, isascii, isblank, isblank_l, iscntrl, iscntrl_l, isdigit, isdigit_l, isgraph, isgraph_l, islower, islower_l, isprint, isprint_l, ispunct, ispunct_l, isspace, isspace_l, isupper, isupper_l, isxdigit, isxdigit_l, toascii, tolower, tolower_l, toupper, toupper_l.
   - Документация по новым заголовочным файлам стандартной библиотеки C: `<limits.h>`, `<float.h>`, `<assert.h>`, `<stdarg.h>`, `<stdbool.h>`, `<stdalign.h>`, `<iso646.h>`, `<stdckdint.h>` (всего 105 статей функций и макросов).
@@ -71,7 +79,7 @@
 - Статьи и папки главы переименованы — убрана нумерация: «1. <strings.h>.md» → «<strings.h>.md», «2. <string.h>.md» → «<string.h>.md», «2. <string.h>/» → «<string.h>/»; обновлены все ссылки (индексы, навигация, хлебные крошки, примечание в главе 9).
 - Статья «<strings.h>» переработана под структуру «<string.h>»: вместо развёрнутого урока оглавление со ссылками на файлы функций и краткое описание библиотеки со сводными таблицами (сравнение без учёта регистра, устаревшие функции BSD с заменами, битовые операции); добавлен полный исходный текст заголовочного файла glibc в разделе «Исходный текст заголовочного файла»; дата обновления — 18.08.2026.
 
-#### Библиотеки
+#### Глава 10. Стандартная библиотека C
 
 - Глава 10. POSIX заменена новой главой «Библиотеки»: в неё перенесены статьи о заголовочных файлах из главы 9 (11. `<stdlib.h>`, 12. `<string.h>`, 13. `<errno.h>`, 14. `<stddef.h>`) и главы 10 (`<stdlib.h>`, `<string.h>`, `<strings.h>`); глава 9 оставлена с уроками 1–10.
 - Статьи с одинаковыми именами объединены: «<stdlib.h>» (разделы «Стандарт C» и «Расширения POSIX и GNU»; 72 статьи функций в `<stdlib.h>/`) и «<string.h>» (те же разделы; 52 статьи функций в `<string.h>/`).
