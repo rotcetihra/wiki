@@ -8,6 +8,12 @@
 
 #### Глава 10. Стандартная библиотека C
 
+- Добавить раздел «Обработка ошибок» в 46 статей о функциях `<stdio.h>`: sscanf, fgetpos, scanf, fprintf, fgets, fsetpos, ungetc, putchar, tmpfile, gets, fflush, fputs, vscanf, fclose, getchar, printf, vsnprintf, vprintf, vfscanf, fopen, setvbuf, fread, clearerr, ferror, rename, fwrite, ftell, puts, putc, snprintf, fputc, rewind, setbuf, fscanf, remove, vsprintf, fseek, tmpnam, getc, vfprintf, perror, freopen, feof, fgetc, vsscanf, sprintf. Информация включает: поведение при NULL, установление errno, многопоточность.
+
+### Изменено
+
+#### Глава 10. Стандартная библиотека C
+
 - Переименовать раздел «Библиотеки» в «Глава 10. Стандартная библиотека C» для выравнивания нумерации глав (после Главы 9 идёт Глава 10).
 
 ### Добавлено
