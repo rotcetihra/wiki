@@ -40,8 +40,8 @@ void print(int *p)
 
 ## Источники
 
-- man-pages 6.18: `assert(3)`
-- GNU C Library (заголовочный файл `assert.h`)
+- https://man7.org/linux/man-pages/man3/assert.3.html
+- `/usr/include/assert.h`
 - ISO/IEC 9899:2024 (C23), раздел 7.2
 
 ## См. также

@@ -93,8 +93,8 @@ C11.
 
 ## Источники
 
-- man-pages 6.18: `static_assert(3)`
-- GNU C Library (заголовочный файл `assert.h`)
+- https://man7.org/linux/man-pages/man3/static_assert.3.html
+- `/usr/include/assert.h`
 - ISO/IEC 9899:2024 (C23)
 
 ## См. также
