@@ -2,7 +2,7 @@
 
 [[Языки программирования/C/Библиотеки|Библиотеки]] / [[Языки программирования/C/Библиотеки/<assert.h>|<assert.h>]] / static_assert
 
-[[Языки программирования/C/Библиотеки/<assert.h>/NDEBUG|Назад]] | [[Языки программирования/C/Библиотеки/<assert.h>|Содержание]] | [[Языки программирования/C/Библиотеки/<ctype.h>/_tolower|Вперёд]]
+[[Языки программирования/C/Библиотеки/<assert.h>/NDEBUG|Назад]] | [[Языки программирования/C/Библиотеки/<assert.h>|Содержание]] | [[Языки программирования/C/Библиотеки/<assert.h>/assert|Вперёд]]
 
 **Дата написания:** 18.08.2026
 **Дата обновления:** 31.08.2026
@@ -26,60 +26,17 @@ void static_assert(bool constant-expression);
 
 Существует ключевое слово `_Static_assert()`, которое ведёт себя идентично и может использоваться без включения `<assert.h>`.
 
-> [!NOTE]
-> В C11 второй аргумент (`msg`) был обязательным; с C23 его можно опустить.
-
 ## Возвращаемое значение
 
 Не возвращает значения.
 
-## Примеры
+## Исключения
 
-```c
-#include <assert.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#define must_be(e)                                        \
-    (                                                     \
-        0 * (int) sizeof(                                 \
-            struct {                                      \
-                static_assert(e);                         \
-                int  ISO_C_forbids_a_struct_with_no_members;  \
-            }                                             \
-        )                                                 \
-    )
-
-#define is_same_type(a, b) \
-    __builtin_types_compatible_p(typeof(a), typeof(b))
-
-#define is_array(arr)       (!is_same_type((arr), &*(arr)))
-#define must_be_array(arr)  must_be(is_array(arr))
-
-#define sizeof_array(arr)   (sizeof(arr) + must_be_array(arr))
-#define NITEMS(arr)         (sizeof((arr)) / sizeof((arr)[0]) \
-                             + must_be_array(arr))
-
-int     foo[10];
-int8_t  bar[sizeof_array(foo)];
-
-int main(void)
-{
-    for (size_t i = 0; i < NITEMS(foo); i++) {
-        foo[i] = i;
-    }
-
-    memcpy(bar, foo, sizeof_array(bar));
-
-    for (size_t i = 0; i < NITEMS(bar); i++) {
-        printf("%d,", bar[i]);
-    }
-
-    exit(EXIT_SUCCESS);
-}
-```
+- **Установление `errno`:** не устанавливает.
+- **Поведение при передаче `NULL`:** не применимо — `static_assert` принимает выражение и строковый литерал.
+- **Поведение при переполнении/нехватке памяти:** не применимо — проверка на этапе компиляции.
+- **Граничные случаи:** выражение должно быть целочисленной константой, вычисляемой на этапе компиляции.
+- **Многопоточность:** не применимо — проверка на этапе компиляции.
 
 ## Стандарты
 
