@@ -5,59 +5,98 @@
 [[Языки программирования/C/Библиотеки/<assert.h>/NDEBUG|Назад]] | [[Языки программирования/C/Библиотеки/<assert.h>|Содержание]] | [[Языки программирования/C/Библиотеки/<ctype.h>/_tolower|Вперёд]]
 
 **Дата написания:** 18.08.2026
+**Дата обновления:** 31.08.2026
 
 ## Определение
 
 ```c
 #include <assert.h>
 
-#define static_assert(expr, msg) // C11: макрос
-// C23: ключевое слово _Static_assert, static_assert — его синоним
+void static_assert(bool constant-expression, const char *msg);
+
+/* С C23: */
+void static_assert(bool constant-expression);
 ```
 
 ## Описание
 
-Макрос (C11; в C23 — встроенное ключевое слово) — проверка условия на этапе компиляции: если выражение-константа ложно, трансляция завершается ошибкой с указанным сообщением. В отличие от `assert()`, `static_assert` не зависит от `NDEBUG` и никогда не исчезает — это контракт программы, проверяемый компилятором. Независимость от `<assert.h>`: с C11 `_Static_assert` доступен из любого места, а с C23 ключевое слово `static_assert` — без включения заголовка.
+Макрос `static_assert` похож на `assert(3)`, но работает на этапе компиляции, генерируя ошибку компиляции (с необязательным сообщением), когда входное выражение ложно (равно нулю). Если выражение не равно нулю, код не генерируется.
+
+Параметр `msg` должен быть строковым литералом. С C23 этот аргумент необязателен.
+
+Существует ключевое слово `_Static_assert()`, которое ведёт себя идентично и может использоваться без включения `<assert.h>`.
+
+> [!NOTE]
+> В C11 второй аргумент (`msg`) был обязательным; с C23 его можно опустить.
+
+## Возвращаемое значение
+
+Не возвращает значения.
 
 ## Примеры
 
 ```c
 #include <assert.h>
-#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-static_assert(sizeof(void *) == 8, "Поддерживаются только 64-битные платформы");
-static_assert(sizeof(int) >= 4, "int должен быть не меньше 32 бит");
+#define must_be(e)                                        \
+    (                                                     \
+        0 * (int) sizeof(                                 \
+            struct {                                      \
+                static_assert(e);                         \
+                int  ISO_C_forbids_a_struct_with_no_members;  \
+            }                                             \
+        )                                                 \
+    )
 
-struct Point {
-    int x;
-    int y;
-};
+#define is_same_type(a, b) \
+    __builtin_types_compatible_p(typeof(a), typeof(b))
 
-static_assert(sizeof(struct Point) == 2 * sizeof(int),
-              "Непредвиденное выравнивание");
+#define is_array(arr)       (!is_same_type((arr), &*(arr)))
+#define must_be_array(arr)  must_be(is_array(arr))
+
+#define sizeof_array(arr)   (sizeof(arr) + must_be_array(arr))
+#define NITEMS(arr)         (sizeof((arr)) / sizeof((arr)[0]) \
+                             + must_be_array(arr))
+
+int     foo[10];
+int8_t  bar[sizeof_array(foo)];
 
 int main(void)
 {
-    return 0;
+    for (size_t i = 0; i < NITEMS(foo); i++) {
+        foo[i] = i;
+    }
+
+    memcpy(bar, foo, sizeof_array(bar));
+
+    for (size_t i = 0; i < NITEMS(bar); i++) {
+        printf("%d,", bar[i]);
+    }
+
+    exit(EXIT_SUCCESS);
 }
 ```
 
-## Плюсы и минусы
+## Стандарты
 
-| Преимущество | Недостаток |
-|---|---|
-| Проверка до запуска программы | Только константные выражения |
-| Не отключается `NDEBUG` | |
+C23.
 
-## Альтернативы
+## История
 
-- **`assert()`** — проверка во время выполнения
+C11.
 
-## Похожие макросы
-
-- [[Языки программирования/C/Библиотеки/<assert.h>/assert|assert]] — проверка во время выполнения
+В C11 второй аргумент (`msg`) был обязательным; с C23 его можно опустить.
 
 ## Источники
 
-- ISO/IEC 9899:2024 (C23), раздел 7.2
-- GNU C Library, заголовочный файл `assert.h`
+- man-pages 6.18: `static_assert(3)`
+- GNU C Library (заголовочный файл `assert.h`)
+- ISO/IEC 9899:2024 (C23)
+
+## См. также
+
+- [[Языки программирования/C/Библиотеки/<assert.h>/assert|assert]] — проверка во время выполнения
