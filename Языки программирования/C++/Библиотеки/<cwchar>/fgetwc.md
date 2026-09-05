@@ -1,0 +1,53 @@
+# fgetwc
+
+[[Языки программирования/C++/Библиотеки|Biblioteki]] / [[Языки программирования/C++/Библиотеки/<cwchar>/cwchar|cwchar]] / fgetwc
+
+[[Языки программирования/C++/Библиотеки/cwchar/btowc|Nazad]] | [[Языки программирования/C++/Библиотеки/<cwchar>/cwchar|cwchar]] | [[Языки программирования/C++/Библиотеки/cwchar/fgetws|Vperyod]]
+
+**Дата написания:** 05.09.2026
+
+## Prototip
+
+```cpp
+#include <cwchar>
+wint_t fgetwc(FILE *stream);
+```
+
+## Parametry
+
+| Parametr | Opisanie |
+|---|---|
+| `stream` | Stream |
+
+## Vozvrashaemoe znachenie
+
+Wide char or WEOF.
+
+## Chto delaet
+
+Reads wide char.
+
+## Primery
+
+### Bazovoe
+
+```cpp
+#include <cwchar>
+#include <iostream>
+int main() { /* fgetwc */ }
+```
+
+## Iskljuchenija
+
+- No exceptions.
+
+## Pohozhie funkcii
+
+- [[Языки программирования/C++/Библиотеки/<cwchar>/cwchar|cwchar]]
+
+## Istochniki
+
+- https://en.cppreference.com/w/cpp/header/cwchar
+- ISO/IEC 14882:2024
+
+[[Языки программирования/C++/Библиотеки/cwchar/btowc|Nazad]] | [[Языки программирования/C++/Библиотеки/<cwchar>/cwchar|cwchar]] | [[Языки программирования/C++/Библиотеки/cwchar/fgetws|Vperyod]]

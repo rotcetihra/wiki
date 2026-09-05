@@ -1,0 +1,43 @@
+# WCHAR_MAX
+
+[[Языки программирования/C++/Библиотеки|Biblioteki]] / [[Языки программирования/C++/Библиотеки/<cwchar>/cwchar|cwchar]] / WCHAR_MAX
+
+[[Языки программирования/C++/Библиотеки/cwchar/NULL|Nazad]] | [[Языки программирования/C++/Библиотеки/<cwchar>/cwchar|cwchar]] | [[Языки программирования/C++/Библиотеки/cwchar/WCHAR_MIN|Vperyod]]
+
+**Дата написания:** 05.09.2026
+
+## Opredelenie
+
+```cpp
+#include <cwchar>
+#define WCHAR_MAX
+```
+
+## Opisanie
+
+Max wchar_t.
+
+## Primery
+
+### Bazovoe
+
+```cpp
+#include <cwchar>
+#include <iostream>
+int main() { std::cout << WCHAR_MAX; }
+```
+
+## Iskljuchenija
+
+- No exceptions.
+
+## Pohozhie jelementy
+
+- [[Языки программирования/C++/Библиотеки/<cwchar>/cwchar|cwchar]]
+
+## Istochniki
+
+- https://en.cppreference.com/w/cpp/header/cwchar
+- ISO/IEC 14882:2024
+
+[[Языки программирования/C++/Библиотеки/cwchar/NULL|Nazad]] | [[Языки программирования/C++/Библиотеки/<cwchar>/cwchar|cwchar]] | [[Языки программирования/C++/Библиотеки/cwchar/WCHAR_MIN|Vperyod]]
