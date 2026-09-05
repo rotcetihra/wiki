@@ -55,6 +55,52 @@
 - `<typeindex>` (8 файлов): тип `type_index`, функции `hash`, `operator==`, `operator!=`, `operator<`, `operator<=`, `operator>`, `operator>=`.
 - `<typeinfo>` (6 файлов): типы `type_info`, `bad_cast`, `bad_typeid`, функции `hash_code`, `name`, `before`.
 
+#### Категория 13. POSIX/Linux (C++)
+
+- 43 заголовочных файла POSIX/Linux (категория «POSIX/Linux»): `<aio.h>`, `<arpa/inet.h>`, `<dirent.h>`, `<dlfcn.h>`, `<fcntl.h>`, `<fnmatch.h>`, `<glob.h>`, `<grp.h>`, `<iconv.h>`, `<langinfo.h>`, `<libgen.h>`, `<limits.h>`, `<locale.h>`, `<mqueue.h>`, `<ndbm.h>`, `<netdb.h>`, `<netinet/in.h>`, `<poll.h>`, `<pthread.h>`, `<pwd.h>`, `<regex.h>`, `<sched.h>`, `<search.h>`, `<semaphore.h>`, `<signal.h>`, `<spawn.h>`, `<string.h>`, `<strings.h>`, `<sys/mman.h>`, `<sys/resource.h>`, `<sys/select.h>`, `<sys/socket.h>`, `<sys/stat.h>`, `<sys/time.h>`, `<sys/types.h>`, `<sys/un.h>`, `<sys/wait.h>`, `<syslog.h>`, `<termios.h>`, `<time.h>`, `<unistd.h>`, `<utime.h>`, `<wordexp.h>` — оглавления и документация по функциям и типам.
+- `<pthread.h>` (21 файл): функции `pthread_create`, `pthread_join`, `pthread_detach`, `pthread_exit`, `pthread_self`, `pthread_mutex_init`, `pthread_mutex_lock`, `pthread_mutex_trylock`, `pthread_mutex_unlock`, `pthread_mutex_destroy`, `pthread_cond_init`, `pthread_cond_wait`, `pthread_cond_signal`, `pthread_cond_broadcast`, `pthread_cond_destroy`, `pthread_key_create`, `pthread_key_delete`, `pthread_setspecific`, `pthread_getspecific`, `pthread_once`.
+- `<unistd.h>` (47 файлов): функции `read`, `write`, `open`, `close`, `lseek`, `access`, `faccessat`, `chdir`, `fchdir`, `getcwd`, `rmdir`, `unlink`, `readlink`, `symlink`, `link`, `linkat`, `stat`, `fstat`, `lstat`, `dup`, `dup2`, `pipe`, `fcntl`, `ioctl`, `fork`, `exec`, `_exit`, `getpid`, `getppid`, `sleep`, `usleep`, `pause`, `alarm`, `kill`, `getuid`, `geteuid`, `getgid`, `getegid`, `setuid`, `setgid`, `chown`, `fchown`, `gethostname`, `sysconf`, `pathconf`, `fpathconf`.
+- `<sys/socket.h>` (14 файлов): функции `socket`, `bind`, `listen`, `accept`, `connect`, `send`, `recv`, `shutdown`, `getsockopt`, `setsockopt`, `getpeername`, `getsockname`, `socketpair`.
+- `<sys/stat.h>` (7 файлов): функции `chmod`, `fchmod`, `mkdir`, `mkfifo`, `mknod`, `umask`.
+- `<signal.h>` (10 файлов): функции `sigaction`, `signal`, `sigemptyset`, `sigfillset`, `sigaddset`, `sigdelset`, `sigismember`, `sigprocmask`.
+- `<aio.h>` (7 файлов): функции `aio_read`, `aio_write`, `aio_error`, `aio_return`, `aio_suspend`, `aio_cancel`.
+- `<dlfcn.h>` (4 файла): функции `dlopen`, `dlsym`, `dlclose`, `dlerror`.
+- `<arpa/inet.h>` (3 файла): функции `inet_ntop`, `inet_pton`.
+- `<dirent.h>` (4 файла): функции `opendir`, `readdir`, `closedir`.
+- `<fcntl.h>` (4 файла): функции `open`, `openat`, `fcntl`, `creat`.
+- `<poll.h>` (2 файла): функция `poll`.
+- `<regex.h>` (5 файлов): функции `regcomp`, `regexec`, `regerror`, `regfree`.
+- `<termios.h>` (8 файлов): функции `tcgetattr`, `tcsetattr`, `tcsendbreak`, `tcdrain`, `tcflush`, `tcflow`, `cfmakeraw`.
+- `<sys/time.h>` (5 файлов): функции `gettimeofday`, `settimeofday`, `getitimer`, `setitimer`.
+- `<syslog.h>` (5 файлов): функции `openlog`, `syslog`, `closelog`, `setlogmask`.
+- `<sys/select.h>` (2 файла): функция `select`.
+- `<sys/wait.h>` (3 файла): функции `wait`, `waitpid`.
+- `<netdb.h>` (5 файлов): функции `getaddrinfo`, `freeaddrinfo`, `gai_strerror`, `getnameinfo`.
+- `<netinet/in.h>` (5 файлов): функции `ntohs`, `ntohl`, `htons`, `htonl`.
+- `<sys/mman.h>` (9 файлов): функции `mmap`, `munmap`, `mprotect`, `msync`, `mlock`, `munlock`, `mlockall`, `munlockall`.
+- `<sys/resource.h>` (4 файла): функции `getrlimit`, `setrlimit`, `getrusage`.
+- `<time.h>` (9 файлов): функции `clock_getres`, `clock_gettime`, `clock_settime`, `nanosleep`, `timer_create`, `timer_delete`, `timer_settime`, `timer_gettime`.
+- `<glob.h>` (3 файла): функции `glob`, `globfree`.
+- `<grp.h>` (6 файлов): функции `getgrnam`, `getgrgid`, `getgrent`, `setgrent`, `endgrent`.
+- `<iconv.h>` (4 файла): функции `iconv_open`, `iconv`, `iconv_close`.
+- `<locale.h>` (3 файла): функции `setlocale`, `localeconv`.
+- `<pwd.h>` (6 файлов): функции `getpwnam`, `getpwuid`, `getpwent`, `setpwent`, `endpwent`.
+- `<sched.h>` (8 файлов): функции `sched_yield`, `sched_getparam`, `sched_setparam`, `sched_getscheduler`, `sched_setscheduler`, `sched_get_priority_max`, `sched_get_priority_min`.
+- `<search.h>` (6 файлов): функции `tsearch`, `tfind`, `tdelete`, `twalk`, `tdestroy`.
+- `<semaphore.h>` (6 файлов): функции `sem_init`, `sem_wait`, `sem_post`, `sem_getvalue`, `sem_destroy`.
+- `<spawn.h>` (10 файлов): функции `posix_spawn`, `posix_spawnp`, `posix_spawnattr_init`, `posix_spawnattr_destroy`, `posix_spawn_file_actions_init`, `posix_spawn_file_actions_destroy`, `posix_spawn_file_actions_addopen`, `posix_spawn_file_actions_addclose`, `posix_spawn_file_actions_adddup2`.
+- `<fnmatch.h>` (2 файла): функция `fnmatch`.
+- `<langinfo.h>` (2 файла): функция `nl_langinfo`.
+- `<libgen.h>` (3 файла): функции `basename`, `dirname`.
+- `<strings.h>` (4 файла): функции `strcasecmp`, `strncasecmp`, `ffs`.
+- `<limits.h>` (1 файл): оглавление с константами.
+- `<ndbm.h>` (1 файл): оглавление.
+- `<string.h>` (1 файл): оглавление.
+- `<sys/types.h>` (1 файл): оглавление.
+- `<sys/un.h>` (1 файл): оглавление.
+- `<utime.h>` (1 файл): оглавление.
+- `<wordexp.h>` (1 файл): оглавление.
+
 #### Глава 1. Основы GTK
 
 - 6 статей главы 1 раздела «Руководство по GTK» — копии статей с сайта metanit.com: «Введение в GTK» (1.1.php), «Создание окон и GtkWindow» (1.2.php), «Настройка окна приложения» (1.3.php), «GtkApplication» (1.4.php), «Создание графического интерфейса в приложении» (1.5.php), «Введение в виджеты» (2.1.php).
