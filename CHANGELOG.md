@@ -6,6 +6,19 @@
 
 ### Добавлено
 
+#### Категория 1. Языковая поддержка (C++)
+
+- 9 заголовков стандартной библиотеки C++ (категория «Языковая поддержка»): `<algorithm>`, `<any>`, `<atomic>`, `<barrier>`, `<bit>`, `<charconv>`, `<chrono>`, `<compare>`, `<concepts>` — оглавления, описания библиотек и документация по типам и функциям (157 файлов).
+- `<algorithm>` (71 файл): сортировка (`sort`, `stable_sort`, `partial_sort`, `nth_element`), проверка отсортированности (`is_sorted`, `is_sorted_until`), бинарный поиск (`binary_search`, `lower_bound`, `upper_bound`, `equal_range`), множество (`merge`, `inplace_merge`, `set_union`, `set_intersection`, `set_difference`, `set_symmetric_difference`, `includes`), extremum (`min_element`, `max_element`, `minmax_element`, `clamp`), предикаты (`all_of`, `any_of`, `none_of`), поиск (`find`, `find_if`, `find_end`, `find_first_of`, `adjacent_find`, `search`, `search_n`), копирование (`copy`, `copy_if`, `copy_n`, `copy_backward`, `move`, `move_backward`), заполнение (`fill`, `fill_n`, `generate`, `generate_n`), удаление (`remove`, `remove_if`, `remove_copy`, `remove_copy_if`), замена (`replace`, `replace_if`, `replace_copy`, `replace_copy_if`), модификация (`reverse`, `reverse_copy`, `rotate`, `rotate_copy`, `shuffle`, `unique`, `unique_copy`), разбиение (`partition`, `partition_copy`, `is_partitioned`, `stable_partition`), обмен (`swap_ranges`, `iter_swap`), итераторы (`reverse_iterator`, `advance`, `distance`, `next`, `prev`).
+- `<any>` (6 файлов, C++17): тип `any`, функции `any_cast`, `make_any`, `swap`, `reset`.
+- `<atomic>` (14 файлов, C++11): типы `atomic`, `atomic_flag`, `atomic_bool`, `atomic_int`, `atomic_long`, `atomic_llong`, `atomic_uint`, `atomic_ulong`, `atomic_ullong`, перечисление `memory_order`, функции `atomic_thread_fence`, `atomic_signal_fence`, `kill_dependency`.
+- `<barrier>` (5 файлов, C++20): тип `barrier`, `arrival_token`, функции `arrive_and_wait`, `arrive_and_drop`.
+- `<bit>` (12 файлов, C++20): функции `bit_cast`, `bit_ceil`, `bit_floor`, `bit_width`, `countl_zero`, `countr_zero`, `popcount`, `has_single_bit`, `rotl`, `rotr`, перечисление `endian`.
+- `<charconv>` (4 файла, C++17): функции `to_chars`, `from_chars`, перечисление `chars_format`.
+- `<chrono>` (15 файлов, C++11): типы `duration`, `time_point`, часы `system_clock`, `steady_clock`, `high_resolution_clock`, функции `now`, `duration_cast`, `time_point_cast`, типы длительности `hours`, `minutes`, `seconds`, `milliseconds`, `microseconds`, `nanoseconds`.
+- `<compare>` (13 файлов, C++20): типы `strong_ordering`, `weak_ordering`, `partial_ordering`, константы `strong_equal`, `weak_equal`, функциональный объект `compare_three_way`, операторы `operator==`, `operator<`, `operator>`, `operator<=`, `operator>=`, оператор `<=>`.
+- `<concepts>` (17 файлов, C++20): концепты `same_as`, `derived_from`, `convertible_to`, `integral`, `floating_point`, `signed_integral`, `unsigned_integral`, `assignable_from`, `swappable`, `destructible`, `constructible_from`, `default_initializable`, `copy_initializable`, `move_initializable`, `equality_comparable`, `totally_ordered`.
+
 #### Категория 3. Контейнеры (C++)
 
 - 14 заголовков стандартной библиотеки C++ (категория «Контейнеры»): `<array>`, `<deque>`, `<flat_map>`, `<flat_set>`, `<forward_list>`, `<list>`, `<map>`, `<set>`, `<span>`, `<spanstream>`, `<stack>`, `<unordered_map>`, `<unordered_set>`, `<vector>` — оглавления, описания библиотек и документация по типам и методам (274 файла).
@@ -23,6 +36,24 @@
 - `<unordered_map>` (24 файла): тип `unordered_map`, методы `at`, `operator[]`, `insert`, `emplace`, `emplace_hint`, `try_emplace`, `insert_or_assign`, `count`, `find`, `contains`, `equal_range`, `bucket_count`, `bucket_size`, `load_factor`, `max_load_factor`, `rehash`, `reserve`, `erase`, `clear`, `merge`, `swap`, `hash_policy`.
 - `<unordered_set>` (18 файлов): тип `unordered_set`, методы `insert`, `emplace`, `emplace_hint`, `count`, `find`, `contains`, `bucket_count`, `bucket_size`, `load_factor`, `max_load_factor`, `rehash`, `reserve`, `erase`, `clear`, `merge`, `swap`.
 - `<vector>` (30 файлов): тип `vector`, методы `at`, `operator[]`, `front`, `back`, `data`, итераторы, `empty`, `size`, `max_size`, `reserve`, `capacity`, `shrink_to_fit`, `clear`, `insert`, `emplace`, `emplace_back`, `push_back`, `pop_back`, `resize`, `swap`, `assign`.
+
+#### Категория 7. Поддержка языка (C++)
+
+- 14 заголовков стандартной библиотеки C++ (категория «Поддержка языка»): `<exception>`, `<functional>`, `<initializer_list>`, `<limits>`, `<memory>`, `<new>`, `<numbers>`, `<numeric>`, `<optional>`, `<source_location>`, `<tuple>`, `<type_traits>`, `<typeindex>`, `<typeinfo>` — оглавления, описания библиотек и документация по типам и функциям (238 файлов).
+- `<exception>` (13 файлов): типы `exception`, `bad_alloc`, `bad_exception`, `bad_cast`, `bad_typeid`, `bad_weak_ptr`, `nested_exception`, `exception_ptr`, `terminate_handler`, функции `current_exception`, `rethrow_exception`, `throw_with_nested`, `terminate`.
+- `<functional>` (29 файлов): типы `function`, `hash`, функции `mem_fn`, `invoke`, `bind`, `bind_front` (C++20), `ref`, `cref`, `not_fn` (C++17), `not2`, объекты-операторы `plus`, `minus`, `multiplies`, `divides`, `modulus`, `negate`, `equal_to`, `not_equal_to`, `greater`, `less`, `greater_equal`, `less_equal`, `logical_and`, `logical_or`, `logical_not`, `bit_and`, `bit_or`, `bit_xor`, `bit_not`.
+- `<initializer_list>` (3 файла): тип `initializer_list`, функции `begin`, `end`.
+- `<limits>` (26 файлов): типы `numeric_limits`, `float_round_style`, `float_denorm_style`, свойства `max_exponent`, `max_exponent10`, `min_exponent`, `min_exponent10`, `radix`, `epsilon`, `round_error`, `denorm_min`, `quiet_NaN`, `signaling_NaN`, `infinity`, `is_specialized`, `is_exact`, `is_integer`, `is_signed`, `is_bounded`, `is_modulo`, `digits`, `digits10`, `max_digits10`, `min`, `lowest`, `max`.
+- `<memory>` (20 файлов): типы `unique_ptr`, `shared_ptr`, `weak_ptr`, `owner_less`, `enable_shared_from_this`, `pointer_traits`, `allocator_traits`, `allocator`, `uses_allocator`, `scoped_allocator_adaptor`, `raw_storage_iterator`, функции `make_unique`, `make_shared`, `allocate_shared`, `uninitialized_default_construct`, `uninitialized_value_construct`, `uninitialized_copy`, `uninitialized_fill`, `destroy`, `temporary_buffer`.
+- `<new>` (9 файлов): типы `bad_alloc`, `bad_array_new_length`, `nothrow`, `new_handler`, функции `operator_new`, `operator_delete`, `set_new_handler`, константы `hardware_constructive_interference_size`, `hardware_destructive_interference_size`.
+- `<numbers>` (12 файлов, C++20): константы `e`, `log2e`, `log10e`, `pi`, `inv_pi`, `ln2`, `ln10`, `sqrt2`, `sqrt3`, `inv_sqrt3`, `egamma`, `phi`.
+- `<numeric>` (14 файлов): функции `iota`, `accumulate`, `inner_product`, `adjacent_difference`, `partial_sum`, `reduce` (C++17), `inclusive_scan` (C++17), `exclusive_scan` (C++17), `transform_inclusive_scan` (C++17), `transform_exclusive_scan` (C++17), `gcd` (C++17), `lcm` (C++17), `midpoint` (C++20), `lerp` (C++20).
+- `<optional>` (12 файлов, C++17): типы `optional`, `nullopt`, `nullopt_t`, `bad_optional_access`, функции `make_optional`, `has_value`, `value`, `value_or`, `operator_bool`, `reset`, `emplace`, `swap`.
+- `<source_location>` (2 файла, C++20): тип `source_location`, функция `current`.
+- `<tuple>` (16 файлов): типы `tuple`, `tuple_size`, `tuple_element`, функции `make_tuple`, `forward_as_tuple`, `tuple_cat`, `get`, `swap`, `operator==`, `operator!=`, `operator<`, `operator>`, `operator<=`, `operator>=`, `tie`, `apply`.
+- `<type_traits>` (54 файла): метатипы проверки `is_same`, `is_integral`, `is_floating_point`, `is_array`, `is_class`, `is_enum`, `is_function`, `is_pointer`, `is_reference`, `is_const`, `is_volatile`, `is_signed`, `is_unsigned`, `is_void`, `is_null_pointer`, `is_bounded_array`, `is_unbounded_array`, трансформации `remove_const`, `remove_volatile`, `remove_cv`, `remove_reference`, `remove_cvref`, `add_const`, `add_volatile`, `add_cv`, `add_lvalue_reference`, `add_rvalue_reference`, `add_pointer`, `decay`, метатипы `enable_if`, `conditional`, `common_type`, `underlying_type`, `is_convertible`, `is_nothrow_constructible`, `is_trivially_copyable`, `is_standard_layout`, `is_pod`, `is_literal_type`, `is_empty`, `is_polymorphic`, `is_abstract`, `is_final`, `is_aggregate`, `alignment_of`, `rank`, `extent`, `is_invocable`, `is_nothrow_invocable`, `invoke_result`, `conjunction`, `disjunction`, `negation`, `is_constant_evaluated`.
+- `<typeindex>` (8 файлов): тип `type_index`, функции `hash`, `operator==`, `operator!=`, `operator<`, `operator<=`, `operator>`, `operator>=`.
+- `<typeinfo>` (6 файлов): типы `type_info`, `bad_cast`, `bad_typeid`, функции `hash_code`, `name`, `before`.
 
 #### Глава 1. Основы GTK
 
