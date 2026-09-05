@@ -6,6 +6,24 @@
 
 ### Добавлено
 
+#### Категория 3. Контейнеры (C++)
+
+- 14 заголовков стандартной библиотеки C++ (категория «Контейнеры»): `<array>`, `<deque>`, `<flat_map>`, `<flat_set>`, `<forward_list>`, `<list>`, `<map>`, `<set>`, `<span>`, `<spanstream>`, `<stack>`, `<unordered_map>`, `<unordered_set>`, `<vector>` — оглавления, описания библиотек и документация по типам и методам (274 файла).
+- `<array>` (23 файла): тип `array`, `tuple_size`, `tuple_element`, методы `at`, `operator[]`, `front`, `back`, `data`, `begin`/`end`/`rbegin`/`rend`/`cbegin`/`cend`/`crbegin`/`crend`, `empty`, `size`, `max_size`, `fill`, `swap`, свободная функция `get`.
+- `<deque>` (30 файла): тип `deque`, методы `at`, `operator[]`, `front`, `back`, `data`, итераторы, `empty`, `size`, `max_size`, `resize`, `clear`, `insert`, `emplace`, `emplace_back`/`emplace_front`, `push_back`/`push_front`, `pop_back`/`pop_front`, `assign`, `swap`.
+- `<flat_map>` (21 файл, C++23): тип `flat_map`, методы `at`, `operator[]`, `insert`, `emplace`, `try_emplace`, `insert_or_assign`, `count`, `find`, `contains`, `equal_range`, `lower_bound`, `upper_bound`, `erase`, `clear`, `merge`, `swap`, `keys`, `values`, `sorted_equal`.
+- `<flat_set>` (16 файлов, C++23): тип `flat_set`, методы `insert`, `emplace`, `emplace_hint`, `count`, `find`, `contains`, `equal_range`, `lower_bound`, `upper_bound`, `erase`, `clear`, `merge`, `swap`, `sorted_equal`.
+- `<forward_list>` (21 файл): тип `forward_list`, методы `insert_after`, `emplace_after`, `emplace_front`, `push_front`, `pop_front`, `front`, `before_begin`, `cbefore_begin`, `max_size`, `resize`, `clear`, `reverse`, `unique`, `sort`, `merge`, `splice_after`, `remove`, `remove_if`, `assign`.
+- `<list>` (25 файлов): тип `list`, методы `insert`, `emplace`, `emplace_back`/`emplace_front`, `push_back`/`push_front`, `pop_back`/`pop_front`, `front`, `back`, `size`, `empty`, `max_size`, `resize`, `clear`, `swap`, `merge`, `splice`, `remove`, `remove_if`, `reverse`, `unique`, `sort`.
+- `<map>` (21 файл): тип `map`, методы `at`, `operator[]`, `insert`, `emplace`, `emplace_hint`, `try_emplace`, `insert_or_assign`, `count`, `find`, `contains`, `equal_range`, `lower_bound`, `upper_bound`, `erase`, `clear`, `merge`, `swap`, `key_comp`, `value_comp`.
+- `<set>` (17 файлов): тип `set`, методы `insert`, `emplace`, `emplace_hint`, `count`, `find`, `contains`, `equal_range`, `lower_bound`, `upper_bound`, `erase`, `clear`, `merge`, `swap`, `key_comp`, `value_comp`.
+- `<span>` (13 файлов, C++20): тип `span`, методы `at`, `operator[]`, `front`, `back`, `data`, `size`, `size_bytes`, `empty`, `subspan`, `first`, `last`.
+- `<spanstream>` (6 файлов, C++23): типы `spanstream`, `ispanstream`, `ospanstream`, `spanbuf`, `spanstreambuf`.
+- `<stack>` (9 файлов): тип `stack`, методы `push`, `emplace`, `pop`, `top`, `size`, `empty`, `swap`.
+- `<unordered_map>` (24 файла): тип `unordered_map`, методы `at`, `operator[]`, `insert`, `emplace`, `emplace_hint`, `try_emplace`, `insert_or_assign`, `count`, `find`, `contains`, `equal_range`, `bucket_count`, `bucket_size`, `load_factor`, `max_load_factor`, `rehash`, `reserve`, `erase`, `clear`, `merge`, `swap`, `hash_policy`.
+- `<unordered_set>` (18 файлов): тип `unordered_set`, методы `insert`, `emplace`, `emplace_hint`, `count`, `find`, `contains`, `bucket_count`, `bucket_size`, `load_factor`, `max_load_factor`, `rehash`, `reserve`, `erase`, `clear`, `merge`, `swap`.
+- `<vector>` (30 файлов): тип `vector`, методы `at`, `operator[]`, `front`, `back`, `data`, итераторы, `empty`, `size`, `max_size`, `reserve`, `capacity`, `shrink_to_fit`, `clear`, `insert`, `emplace`, `emplace_back`, `push_back`, `pop_back`, `resize`, `swap`, `assign`.
+
 #### Глава 1. Основы GTK
 
 - 6 статей главы 1 раздела «Руководство по GTK» — копии статей с сайта metanit.com: «Введение в GTK» (1.1.php), «Создание окон и GtkWindow» (1.2.php), «Настройка окна приложения» (1.3.php), «GtkApplication» (1.4.php), «Создание графического интерфейса в приложении» (1.5.php), «Введение в виджеты» (2.1.php).
