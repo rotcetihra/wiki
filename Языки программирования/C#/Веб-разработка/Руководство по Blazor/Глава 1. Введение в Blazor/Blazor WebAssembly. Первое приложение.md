@@ -1,0 +1,662 @@
+# Blazor WebAssembly. Первое приложение
+
+[[Языки программирования/C#|C#]] / [[Языки программирования/C#/Веб-разработка|Веб-разработка]] / [[Языки программирования/C#/Веб-разработка/Руководство по Blazor|Руководство по Blazor]] / [[Языки программирования/C#/Веб-разработка/Руководство по Blazor/Глава 1. Введение в Blazor|Глава 1. Введение в Blazor]] / Blazor WebAssembly. Первое приложение
+
+[[Языки программирования/C#/Веб-разработка/Руководство по Blazor/Глава 1. Введение в Blazor/Добавление Blazor в пустой проект ASP.NET Core|Назад]] | [[Языки программирования/C#/Веб-разработка/Руководство по Blazor/Глава 1. Введение в Blazor|Содержание]] | [[Языки программирования/C#/Веб-разработка/Руководство по Blazor/Глава 2. Компоненты/Установка главного компонента|Вперёд]]
+
+**Дата написания:** 05.09.2026
+
+## Blazor WebAssembly. Первое приложение
+
+Последнее обновление: 29.11.2023
+
+
+
+
+-
+
+-
+
+-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Blazor позволяет создавать приложения клиентской стороны с использованием технологии WebAssembly. Подобное приложение полностью работает на стороне клиента.
+
+
+### Создание проекта в Visual Studio
+
+
+Для создания проекта Blazor WebAssembly Visual Studio предоставляет тип шаблона проекта Blazor WebAssembly Standalone App. Выберем данный тип проекта:
+![Создание приложения Blazor WebAssembly Standalone App и C# в Visual Studio](https://metanit.com./pics/1.43.png)
+
+
+Далее установим для проекта имя (например, в моем случае проект будет называться BlazorWasmApp) и установим каталог проекта:
+![Создание проекта Blazor WebAssembly App и C# в Visual Studio](https://metanit.com./pics/1.4.png)
+
+
+Затем нам надо настроить ряд опций для проекта:
+![Настройка проекта Blazor WebAssembly App и C# в Visual Studio](https://metanit.com./pics/1.5.png)
+
+
+Здесь мы можем указать версию фреймворка .NET, которую будет использовать проект
+
+
+Также здесь можно установить тип аутентификации. Нам этот параметр не важен, поэтому оставим значение по умолчанию - `None`
+
+
+И также можно установить ряд флажков:
+
+
+-
+
+Configure for HTTPS (надо ли использовать протокол HTTPS)
+
+
+-
+
+Progressive Web Application (будет ли приложение Blazor представлять приложение PWA)
+
+
+-
+
+Include sample pages (будут ли при создании проекта добавляться некоторый набор базовой функциональности)
+
+
+-
+
+Do not use top-level statements (будут ли использоваться инструкции верхнего уровня)
+
+
+Отметим опцию Include sample pages, а все остальные оставим по умолчанию и нажнем на кнопку создания проекта.
+
+
+### Создание проекта через .NET CLI
+
+
+Также можно создать проект Blazor WebAssembly через .NET Cli, используя шаблон blazorwasm:
+
+```
+dotnet new blazorwasm -o BlazorWebApp
+```
+
+
+Также можно указать дополнительные опции, в частности, надо ли включать базовую функциональность (если не надо, то применяется опция `-e`) и
+будет ли это PWA-приложение (опция `--pwa`):
+
+```
+dotnet new blazorwasm -o BlazorWebAssemblyApp --pwa –e
+```
+
+
+### Структура проекта
+
+
+После создания проекта он будет иметь следующую структуру:
+![Структура проекта Blazor WebAssembly на C# в Visual Studio](https://metanit.com./pics/1.6.png)
+
+
+-
+
+Папка wwwroot содержит статические файлы приложения.
+
+
+ -
+
+Подпапка css хранит определения стилей css, например, файл стилей фреймворка bootstrap.
+
+ -
+
+Подпапка sample-data хранит файл weather.json, который представляет некоторые типовые данные в формате json, используемые приложением.
+
+ -
+
+Файл index.html представляет главную страницу, на которую и будет загружаться приложение Blazor
+
+
+-
+
+Папка Pages содержит компоненты Razor.
+
+
+ -
+
+Counter.razor хранит код компонента Counter, суть которого в определение счетчика, значение которого увеличивается при
+нажатии на кнопку.
+
+ -
+
+Weather.razor хранит код компонента Weather, который с помощью HttpClient получает некоторые данные и
+выводит их на веб-страницу
+
+ -
+
+Home.razor хранит код компонента Home.
+
+
+-
+
+Папка Shared хранит дополнительные компоненты Razor
+
+
+ -
+
+MainLayout.razor хранит код компонента MainLayout, который определяет структуру или компоновку приложения blazor.
+
+ -
+
+NavMenu.razor хранит код компонента NavMenu, который определяет элементы навигации
+
+ -
+
+ServeyPrompt.razor представляет дополнительный типовой компонент, который не выполняет особых функций
+
+
+-
+
+_Imports.razor содержит подключения пространств имен с помощью директивы using, которые будут подключаться
+в компоненты Razor.
+
+-
+
+App.razor содержит определение корневого компонента приложения, который позволяет установить маршрутизацию между вложенными компонентами с помощью другого встроенного компонента Router.
+
+-
+
+Файл Program.cs содержит класс Program, который представляет точку входа в приложение. В данном случае это стандартный для приложения
+ASP.NET Core класс Program, который запускает и конфигурирует хост, в рамках которого разворачивается приложение с Blazor.
+
+
+### Процесс загрузки приложения в Blazor WebAssembly
+
+
+Рассмотрим в целом, как происходит запуск приложения на Blazor WebAssembly. Сначала браузер делает запрос к веб-серверу, который возвращает набор файлов,
+необходимых для загрузки приложения - главная страница приложения (обычно index.html), статические ресурсы (изображения, файлы CSS и JavaScript), а также специальный файл
+blazor.webassembly.js, который подключен на главной странице приложения. Все это статические файлы.
+
+
+В проекте главная страница index.html располагается в папке wwwroot и выглядит следующим образом:
+
+```
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>BlazorWasmApp</title>
+ <base href="/" />
+ <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+ <link rel="stylesheet" href="css/app.css" />
+ <link rel="icon" type="image/png" href="favicon.png" />
+ <link href="BlazorWasmApp.styles.css" rel="stylesheet" />
+</head>
+
+<body>
+ <div id="app">
+ <svg class="loading-progress">
+ <circle r="40%" cx="50%" cy="50%" />
+ <circle r="40%" cx="50%" cy="50%" />
+ </svg>
+ <div class="loading-progress-text"></div>
+ </div>
+
+ <div id="blazor-error-ui">
+ An unhandled error has occurred.
+ <a href="" class="reload">Reload</a>
+ <a class="dismiss">🗙</a>
+ </div>
+ <script src="_framework/blazor.webassembly.js"></script>
+</body>
+
+</html>
+
+```
+
+
+Когда браузер загрузил эту страницу, начинает выполняться подключаемый внизу страницы скрипт blazor.webassembly.js. Он
+загружает файл с именем blazor.boot.json, который содержит список всех файлов фреймворка и приложения, необходимых для запуска приложения.
+В основном это сборки .NET. И все эти файлы, указанные в `blazor.boot.json`, также загружаются в коде javascript.
+
+
+Также blazor.webassembly.js загружает еще один специальный файл - dotnet.wasm. Этот файл представляет собой среду
+выполнения Mono .NET, скомпилированную в WebAssembly.
+
+
+После загрузки всех файлов из blazor.boot.json код из файла
+blazor.webassembly.js инициализирует среду выполнения WebAssembly .NET, которая загружает инфраструктуру Blazor и само приложение.
+![Модель Blazor WebAssembly в C# и .NET](https://metanit.com./pics/1.1.png)
+
+
+### Принцип работы приложения
+
+
+Непосредственно работа приложения Blazor начинается с класса Program:
+
+```
+
+using BlazorWasmApp;
+using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+
+var builder = WebAssemblyHostBuilder.CreateDefault(args);
+builder.RootComponents.Add<App>("#app");
+builder.RootComponents.Add<HeadOutlet>("head::after");
+
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+await builder.Build().RunAsync();
+
+```
+
+
+Основная задача класса Program - настроить и запустить хост, который представлен классом WebAssemblyHost.
+Для этого у класса билдера хоста - WebAssemblyHostBuilder вызывается метод `Build()`. А для запуска хоста вызывается метод
+`RunAsync()`.
+
+
+Кроме этого, с помощью свойства RootComponents и его свойства `Add()` добавляется
+класс корневого компонента и его селектор:
+
+```
+builder.RootComponents.Add<App>("#app");
+```
+
+
+В то есть в данном случае класс компонента называется App, а для его рендеринга на веб-странице используется элемент c css-селектором `#app`, то есть такой элемент, у которого `id=app`.
+
+```
+
+<div id="app">
+.........................
+</div>
+
+```
+
+
+Также добавляется компонент `HeadOutlet` - он позволяет вносить изменения в элемент `<head>` на html-странице (например, обновлять мета-теги или заголовок страницы).
+
+
+Ну и кроме того, здесь в приложение внедряется в качестве сервиса HttpClient, который используется в компонентах Blazor для отправки http-запросов:
+
+```
+builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+```
+
+
+### Класс App
+
+
+Класс компонента App из файла App.razor в корне проекта представляет основной компонент приложения, в рамках которого будут запускаться все
+другие компоненты и функциональность приложения Blazor WebAssembly.
+
+```
+
+<Router AppAssembly="@typeof(App).Assembly">
+ <Found Context="routeData">
+ <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+ <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+ </Found>
+ <NotFound>
+ <PageTitle>Not found</PageTitle>
+ <LayoutView Layout="@typeof(MainLayout)">
+ <p role="alert">Sorry, there's nothing at this address.</p>
+ </LayoutView>
+ </NotFound>
+</Router>
+
+```
+
+
+Компонент App, как и в проекте Blazor Server, с помощью встроенного компонента Router
+добавляет возможность маршрутизации по вложенным компонентам.
+Его атрибут AppAssembly указывает на сборку, в которой следует искать запрошенные вложенные компоненты.
+
+
+При запросе компонентов может быть две ситуации: запрошенный ресурс (компонент) найден и ресурс не найден. Соответственно для каждой из этих ситуаций
+определены соответственно два элемента: Found и NotFound
+
+
+Компонент Found содержит другой компонент - RouteView. Через атрибут RouteData он получает контекст маршрутизации,
+который будут использоваться при обработке запроса. А другой атрибут - DefaultLayout устанавливает компонент, который
+будет определять компоновку (layout) содержимого - в данном случае это компонент MainLayout.
+
+
+Комопонент NotFound определяет, как будет рендерится ответ, если компонент для обработки запроса не найден. С помощью вложенного
+компонента LayoutView определяется компонент, который будет задавать компоновку. В данном случае это опять же компонент MainLayout.
+
+
+### MainLayout
+
+
+В обоих случаях в компоненте App для определения компоновки приложения используется компонент MainLayout,
+который определен в файле MainLayout.razor в папке Layout:
+
+```
+
+@inherits LayoutComponentBase
+
+<div class="page">
+ <div class="sidebar">
+ <NavMenu />
+ </div>
+
+ <main>
+ <div class="top-row px-4">
+ <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+ </div>
+
+ <article class="content px-4">
+ @Body
+ </article>
+ </main>
+</div>
+
+```
+
+
+Компонент наследуется от класса LayoutComponentBase, который определяет базовую функциональность для компоновки. Например, с помощью свойства
+Body в определенном месте разметки будет добавляться выбранный компонент. То есть на место вызова
+`@Body` будет добавляться контент компонентов Home, Counter и Weather из папки Pages.
+
+
+С помощью элемента `<NavMenu />` добавляется компонент NavMenu из файла Layout/NavMenu.razor, который создает систему навигации. Благодаря этому
+мы можем переходить к различным компонентам внутри приложения по набору ссылок. При этом при обращении по ссылке никаких запросов на сервер не идет. Все запросы обрабатываются локально.
+
+
+### Выбор компонентов
+
+
+Основные комопненты, которые представляют отдельные ресурсы и к которым пользователь может осуществлять запросы, раплагаются в папке Pages - это
+компоненты Home, Counter, Weather. Чтобы они могли быть сопоставлены с определенными маршрутами, в начале каждого подобного компонента указывается
+директива @page с указанием маршрута. Например, компонент Counter:
+
+```
+
+@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+ private int currentCount = 0;
+
+ private void IncrementCount()
+ {
+ currentCount++;
+ }
+}
+
+```
+
+
+Данный компонент будет сопоставляться с запросами по пути "/counter", например, `https://localhost:44304/counter`.
+
+
+Стоит отметить, что данный компонент обрабатывает события пользовательского интерфейса. Если в приложении происходит какое-либо событие графического интерфейса, например, нажатие пользователя на кнопку, то это событие перехватывается
+кодом blazor.webassembly.js. Далее это событие передается фреймворку Blazor, который работает поверх среды выполнения dotnet.wasm, и обрабатывается
+компонентом маршрутизации Blazor. А компонент маршрутизации или роутер в таблице маршрутизации выбирает компонент для обработки события. Создается объект данного компонента, который обрабатывает событие.
+
+
+Затем Blazor вычисляет минимально необходимое количество изменений для обновления DOM, чтобы DOM соответствовал изменившемуся состоянию компоеннта.
+После завершения информация об изменениях передается обратно - коду из файла blazor.webassembly.js, который применяет изменения к реальному DOM. Соответственно
+происходит обновление html-страницы.
+![Обработка событий и обновление DOM в Blazor WebAssembly в C# и .NET](https://metanit.com./pics/1.2.png)
+
+
+### Запуск проекта
+
+
+Этот проект уже представляет готовый функционал, и мы можем запустить проект и опробовать его типовую функциональность:
+![](https://metanit.com./pics/1.7.png)
+
+
+Через инструменты разработчика мы можем увидеть, что среди прочих файлов загружается файл `blazor.boot.json`, о котором выше шла речь и который будет иметь
+содержание типа следующего:
+
+```
+
+{
+ "mainAssemblyName": "BlazorWasmApp",
+ "resources": {
+ "hash": "sha256-+DjjbS9bPw2T2LbRSJceAH1BygJbGpVlpnDZGrprqkw=",
+ "jsModuleNative": {
+ "dotnet.native.8.0.0.6861x3atex.js": "sha256-LjLDIz9+J7uuiwMlQ4HbNx2BnSpphOtO2MwkoI28vdI="
+ },
+ "jsModuleRuntime": {
+ "dotnet.runtime.8.0.0.nv2fjwutuz.js": "sha256-WdSX3HQvnBYF0KJLZoOyHvTzMHetaob6PV0Kn2K+QXw="
+ },
+ "wasmNative": {
+ "dotnet.native.wasm": "sha256-Vr6ZXKoP77zgabrMIxQ1GbOkrxfx5XGqHO0odLhUIMY="
+ },
+ "icu": {
+ "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
+ "icudt_EFIGS.dat": "sha256-8fItetYY8kQ0ww6oxwTLiT3oXlBwHKumbeP2pRF4yTc=",
+ "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
+ },
+ "assembly": {
+ "Microsoft.AspNetCore.Authorization.wasm": "sha256-j29bzsbGr0GXbz3saSOBqDtWxNOK08Or3b1HgnZ+pvA=",
+ "Microsoft.AspNetCore.Components.wasm": "sha256-0SRqG4hZOVUUFxERmD93PJWBJR6d4gCf5UB9vF6jB9A=",
+ "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-v5x7jiwdpMdHj54wA/JoDsrCrnr89XklOokSoWNJzF0=",
+ "Microsoft.AspNetCore.Components.Web.wasm": "sha256-H1qHk5Kqn+R+8t/eTsZzQ5/5ZvgjmC8+ZPyuEp5nals=",
+ .............................................................
+ "System.wasm": "sha256-cMSi3CkR4f0ANPSwi7X/T6NvBS6QMlbFtcvKQrCeG6I=",
+ "WindowsBase.wasm": "sha256-ydADyJcM/JrxGU0lPCIn9utGtPieXB+ubXRN7TJls5Y=",
+ "mscorlib.wasm": "sha256-cDuLeL3OCtVtiid/dyex1MVgbuzDSRwZxKzuP2Dp4mg=",
+ "netstandard.wasm": "sha256-A0h86SDieTMoU/wU2JTszWCsUmMuguDcbap0b0BzsmI=",
+ "System.Private.CoreLib.wasm": "sha256-/0DNIm/T0C07X7Tuz5uR8JvVCoAfEE2MnfPUSjyS9xc=",
+ "BlazorWasmApp.wasm": "sha256-rZjrh07jSGIYAY2VA6lpd6Ip/p+N9es5g0tTXyYoYMM="
+ },
+ "pdb": {
+ "BlazorWasmApp.pdb": "sha256-71Sd7nJUDTYJyBkxaOzqB3nUMXBTo+u/ZkoZ4dfNMfE="
+ }
+ },
+ "cacheBootResources": true,
+ "debugLevel": -1,
+ "globalizationMode": "sharded",
+ "extensions": {
+ "blazor": {}
+ }
+}
+
+```
+
+
+Здесь мы можем увидеть список всех библиотек dll, которые будут загружаться для работы приложения.
+
+
+Кроме того, в инструментах браузера мы можем увидеть, что также загружается еще ряд файлов. В частности,
+
+
+-
+
+dotnet.js: это точка входа ("загрузчик"), который содержит общедоступный API для взаимодействия со средой выполнения .NET.
+
+-
+
+dotnet.native.js: содержит Emscripten API и загружается загрузчиком.
+
+-
+
+dotnet.runtime.js: содержит остальную часть среды выполнения .NET.
+
+
+
+
+
+
+
+
+
+
+
+
+- Глава 1. Введение в Blazor
+
+
+ - [Что такое Blazor](//metanit.com/sharp/blazor/1.1.php)
+
+ - [Первое приложение на Blazor](//metanit.com/sharp/blazor/1.2.php)
+
+ - [Рендеринг на сервере](//metanit.com/sharp/blazor/1.7.php)
+
+ - [Рендеринг WebAssembly и авторендеринг](//metanit.com/sharp/blazor/1.8.php)
+
+ - [Добавление Blazor в пустой проект ASP.NET Core](//metanit.com/sharp/blazor/1.4.php)
+
+ - [Blazor WebAssembly. Первое приложение](//metanit.com/sharp/blazor/1.3.php)
+
+
+
+- Глава 2. Компоненты
+
+
+ - [Установка главного компонента](//metanit.com/sharp/blazor/2.2.php)
+
+ - [Определение компонентов](//metanit.com/sharp/blazor/2.1.php)
+
+ - [Вложенные компоненты. Параметры компонентов](//metanit.com/sharp/blazor/2.3.php)
+
+ - [Передача произвольного набора атрибутов](//metanit.com/sharp/blazor/2.4.php)
+
+ - [Обработка событий](//metanit.com/sharp/blazor/2.5.php)
+
+ - [Обработка событий дочернего компонента в родительском](//metanit.com/sharp/blazor/2.6.php)
+
+ - [Привязка данных](//metanit.com/sharp/blazor/2.7.php)
+
+ - [Двусторонняя привязка и привязка параметров компонентов](//metanit.com/sharp/blazor/2.8.php)
+
+ - [Каскадная передача значений](//metanit.com/sharp/blazor/2.9.php)
+
+ - [Жизненный цикл компонентов](//metanit.com/sharp/blazor/2.10.php)
+
+ - [Внедрение зависимостей в компоненты Blazor](//metanit.com/sharp/blazor/2.11.php)
+
+ - [Привязка моделей](//metanit.com/sharp/blazor/2.12.php)
+
+ - [Управление элементом head и компонент HeadOutlet](//metanit.com/sharp/blazor/2.13.php)
+
+ - [Файл _Imports.razor и общие директивы компонентов](//metanit.com/sharp/blazor/2.14.php)
+
+
+
+- Глава 3. Маршрутизация
+
+
+ - [Маршрутизация между компонентами](//metanit.com/sharp/blazor/3.1.php)
+
+ - [Компоновка](//metanit.com/sharp/blazor/3.2.php)
+
+ - [Компонент NavLink](//metanit.com/sharp/blazor/3.3.php)
+
+ - [Параметры маршрутов](//metanit.com/sharp/blazor/3.4.php)
+
+ - [Параметры строки запроса](//metanit.com/sharp/blazor/3.5.php)
+
+ - [Управление навигацией и NavigationManager](//metanit.com/sharp/blazor/3.6.php)
+
+
+
+- Глава 4. Работа с формами и валидация
+
+
+ - [Встроенные компоненты ввода](//metanit.com/sharp/blazor/4.1.php)
+
+ - [Компонент EditForm](//metanit.com/sharp/blazor/4.2.php)
+
+ - [Валидация на основе аннотаций данных](//metanit.com/sharp/blazor/4.3.php)
+
+ - [Валидация и вывод сообщений об ошибках](//metanit.com/sharp/blazor/4.4.php)
+
+ - [Программная валидация](//metanit.com/sharp/blazor/4.5.php)
+
+ - [Кастомная валидации](//metanit.com/sharp/blazor/4.6.php)
+
+
+
+- Глава 5. Отправка http-запросов
+
+
+ - [HttpClient в проекте Blazor Server](//metanit.com/sharp/blazor/6.3.php)
+
+ - [HttpClient в проекте Blazor WebAssembly](//metanit.com/sharp/blazor/6.1.php)
+
+ - [Взаимодействие приложения Blazor с Web API](//metanit.com/sharp/blazor/6.2.php)
+
+
+
+- Глава 6. Дополнительные статьи
+
+
+ - [Конфигурация](//metanit.com/sharp/blazor/5.1.php)
+
+
+
+
+
+
+
+
+
+
+ [Настройки](//metanit.com/settings.php)
+
+
+
+
+ Помощь сайту
+
+
+ [Помощь сайту](https://yoomoney.ru/to/410011174743222)
+
+
+
+ Юмани:
+ 410011174743222
+
+
+
+ Номер карты:
+ 4048415020898850
+
+
+
+
+
+
+
+
+
+
+
+[Вконтакте](https://vk.com/metanit)|
+[МАКС](https://max.ru/metanit)|
+[Донаты/Помощь сайту](https://metanit.com/donations.php)
+
+
+Contacts: metanit22@mail.ru
+
+
+Copyright © Евгений Попов, metanit.com, 2026. Все права защищены.
+
+---
+
+**Источник:** [https://metanit.com/sharp/blazor/1.3.php](https://metanit.com/sharp/blazor/1.3.php)
